@@ -45,7 +45,7 @@ NSString* const kTwitterBaseUrl = @"https://api.twitter.com";
         [self GET:@"1.1/account/verify_credentials.json" parameters: nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             User* user = [[User alloc] initWithDictionary:responseObject];
             [User setCurrentUser:user];
-            NSLog(@"Current user: %@", user.name);
+            NSLog(@"Current user: %@", user.userProperties[@"name"]);
             self.loginCompletion(user, nil);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Failed getting current user");
@@ -53,6 +53,7 @@ NSString* const kTwitterBaseUrl = @"https://api.twitter.com";
         }];
         
     } failure:^(NSError *error) {
+        NSLog(@"%@", error);
         NSLog(@"Failed to get access token");
         self.loginCompletion(nil, error);
     }];

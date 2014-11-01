@@ -12,10 +12,7 @@
 - (id)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self) {
-        self.name = dictionary[@"name"];
-        self.screenName = dictionary[@"screen_name"];
-        self.profileImageURL = dictionary[@"profile_image_url"];
-        self.tagLine = dictionary[@"description"];
+        self.userProperties = dictionary;
     }
     return self;
 }
@@ -37,7 +34,7 @@ NSString* const kCurrentUserKey = @"kCurrentUserKey";
     _currentUser = user;
     
     if (_currentUser != nil) {
-        NSData* data = [NSJSONSerialization dataWithJSONObject:_currentUser options:0 error:nil];
+        NSData* data = [NSJSONSerialization dataWithJSONObject:user.userProperties options:0 error:nil];
         [[NSUserDefaults standardUserDefaults] setObject:data forKey:kCurrentUserKey];
     } else {
         [[NSUserDefaults standardUserDefaults] setObject:nil forKey:kCurrentUserKey];

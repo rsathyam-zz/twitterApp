@@ -20,7 +20,7 @@
     [[TwitterClient sharedInstance] loginWithCompletion:^(User *user, NSError *error) {
         if (user != nil) {
             [User setCurrentUser:user];
-            NSLog(@"Welcome to %@", user.name);
+            NSLog(@"Welcome to %@", user.userProperties[@"name"]);
             //Modally presents tweet view
         } else {
 
