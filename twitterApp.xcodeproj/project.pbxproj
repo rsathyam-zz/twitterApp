@@ -17,6 +17,8 @@
 		FABC008A19FF425400BDFE39 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FABC008819FF425400BDFE39 /* LoginViewController.m */; };
 		FABC008B19FF425400BDFE39 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABC008919FF425400BDFE39 /* LoginViewController.xib */; };
 		FABC008E19FF444A00BDFE39 /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FABC008D19FF444A00BDFE39 /* TwitterClient.m */; };
+		FABDF71C1A01423B00E03211 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = FABDF71B1A01423B00E03211 /* Tweet.m */; };
+		FABDF71F1A01424600E03211 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FABDF71E1A01424600E03211 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,10 @@
 		FABC008919FF425400BDFE39 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		FABC008C19FF444A00BDFE39 /* TwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClient.h; sourceTree = "<group>"; };
 		FABC008D19FF444A00BDFE39 /* TwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterClient.m; sourceTree = "<group>"; };
+		FABDF71A1A01423B00E03211 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		FABDF71B1A01423B00E03211 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		FABDF71D1A01424600E03211 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		FABDF71E1A01424600E03211 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,7 @@
 		FA0A18A119FF3F390040ABE9 /* twitterApp */ = {
 			isa = PBXGroup;
 			children = (
+				FABDF7191A01421400E03211 /* models */,
 				FA0A18A619FF3F390040ABE9 /* AppDelegate.h */,
 				FA0A18A719FF3F390040ABE9 /* AppDelegate.m */,
 				FA0A18B219FF3F390040ABE9 /* Images.xcassets */,
@@ -149,6 +156,17 @@
 				FA0A18C019FF3F390040ABE9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FABDF7191A01421400E03211 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				FABDF71A1A01423B00E03211 /* Tweet.h */,
+				FABDF71B1A01423B00E03211 /* Tweet.m */,
+				FABDF71D1A01424600E03211 /* User.h */,
+				FABDF71E1A01424600E03211 /* User.m */,
+			);
+			name = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,8 +305,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FABC008A19FF425400BDFE39 /* LoginViewController.m in Sources */,
+				FABDF71F1A01424600E03211 /* User.m in Sources */,
 				FA0A18A819FF3F390040ABE9 /* AppDelegate.m in Sources */,
 				FABC008E19FF444A00BDFE39 /* TwitterClient.m in Sources */,
+				FABDF71C1A01423B00E03211 /* Tweet.m in Sources */,
 				FA0A18AB19FF3F390040ABE9 /* twitterApp.xcdatamodeld in Sources */,
 				FA0A18A519FF3F390040ABE9 /* main.m in Sources */,
 			);

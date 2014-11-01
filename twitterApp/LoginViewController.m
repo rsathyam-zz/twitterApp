@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "TwitterClient.h"
+#import "user.h"
 
 @interface LoginViewController ()
 
@@ -16,11 +17,14 @@
 @implementation LoginViewController
 
 - (IBAction)onLogin:(id)sender {
-    [[TwitterClient sharedInstance].requestSerializer removeAccessToken];
-    [[TwitterClient sharedInstance] fetchRequestTokenWithPath:@"oauth/request_token" method:@"GET" callbackURL:[NSURL URLWithString:@"cptwitterdemo://oauth"] scope:nil success:^(BDBOAuthToken *requestToken) {
-        NSLog(@"Got the request token");
-    } failure:^(NSError *error) {
-        NSLog(@"Failed request token");
+    [[TwitterClient sharedInstance] loginWithCompletion:^(User *user, NSError *error) {
+        if (user != nil) {
+            [User setCurrentUser:user];
+            NSLog(@"Welcome to %@", user.name);
+            //Modally presents tweet view
+        } else {
+
+        }
     }];
 }
 
