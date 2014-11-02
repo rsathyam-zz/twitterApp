@@ -14,7 +14,6 @@
 @property (nonatomic, strong) NSString* text;
 @property (nonatomic, strong) NSDate* createdAt;
 @property (nonatomic, strong) User* creator;
-@property (nonatomic, strong) NSString* profileImageURL;
 
 + (NSArray *)tweetsWithArray:(NSArray *)array;
 @end

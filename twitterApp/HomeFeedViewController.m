@@ -78,10 +78,13 @@ static HomeFeedViewCell* _sizingCell = nil;
     
     Tweet* tweet = self.tweets[indexPath.row];
     cell.tweetTextLabel.text = tweet.text;
-    cell.tweetUsernameLabel.text = tweet.creator.screenName;
+    cell.tweetUsernameLabel.text = [@"@" stringByAppendingString:tweet.creator.screenName];
+    [cell.tweetUsernameLabel setFont:[UIFont fontWithName:@"Arial" size:11]];
     cell.tweetNameLabel.text = tweet.creator.name;
+    [cell.tweetNameLabel setFont:[UIFont fontWithName:@"Arial-BoldMT" size:13]];
     
-    NSURL* profilePictureURL = [NSURL URLWithString:tweet.profileImageURL];
+    
+    NSURL* profilePictureURL = [NSURL URLWithString:[tweet.creator.profileImageURL stringByReplacingOccurrencesOfString:@"_normal.jpeg" withString:@".jpeg"]];
     NSURLRequest* profilePictureRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5];
     CGSize targetSize = cell.tweetProfilePictureLabel.bounds.size;
     

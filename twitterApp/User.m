@@ -13,6 +13,9 @@
     self = [super init];
     if (self) {
         self.userProperties = dictionary;
+        self.name = self.userProperties[@"name"];
+        self.screenName = self.userProperties[@"screen_name"];
+        self.profileImageURL = self.userProperties[@"profile_image_url"];
     }
     return self;
 }
