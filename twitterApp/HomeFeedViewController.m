@@ -13,6 +13,7 @@
 #import "UIImageView+AFNetworking.h"
 
 @interface HomeFeedViewController ()
+@property UIRefreshControl *refreshControl;
 @end
 
 @implementation HomeFeedViewController
@@ -24,12 +25,14 @@ static HomeFeedViewCell* _sizingCell = nil;
     self.feedTableView.delegate = self;
     self.feedTableView.dataSource = self;
     
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(onRefresh) forControlEvents:UIControlEventValueChanged];
+    
     [self.feedTableView registerNib:[UINib nibWithNibName:@"HomeFeedViewCell" bundle:nil] forCellReuseIdentifier:@"HomeFeedViewCell"];
 
     [[TwitterClient sharedInstance] homeTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
         if (error == nil) {
             self.tweets = [[NSArray alloc] initWithArray:tweets];
-            NSLog(@"%@", tweets);
             [self.feedTableView reloadData];
         } else {
             NSLog(@"%@", error);
@@ -41,6 +44,20 @@ static HomeFeedViewCell* _sizingCell = nil;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+#pragma mark - UIRefreshControl
+- (void)onRefresh
+{
+    [[TwitterClient sharedInstance] homeTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
+        if (error == nil) {
+            self.tweets = [[NSArray alloc] initWithArray:tweets];
+            [self.feedTableView reloadData];
+            [self.refreshControl endRefreshing];
+        } else {
+            NSLog(@"%@", error);
+        }
+    }];
 }
 
 - (id)initWithUser:(User *)user {
