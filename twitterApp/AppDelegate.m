@@ -8,9 +8,9 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "HomeFeedViewController.h"
 #import "TwitterClient.h"
 #import "User.h"
-#import "Tweet.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +22,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[LoginViewController alloc] init];
+
+    User* user = [User getCurrentUser];
+    if (user == nil) {
+        //Go to login view if the user isn't initialized
+        self.window.rootViewController = [[LoginViewController alloc] init];
+    } else {
+        //If viewer is initialized go to the home feed view
+        self.window.rootViewController = [[HomeFeedViewController alloc] init];
+    }
+    
     [self.window makeKeyAndVisible];
     
     return YES;

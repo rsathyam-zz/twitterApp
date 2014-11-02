@@ -7,6 +7,7 @@
 //
 
 #import "TwitterClient.h"
+#import "Tweet.h"
 
 NSString* const kTwitterConsumerKey = @"lpAuGEcLGlH5Z5IT6tud2Hnjg";
 NSString* const kTwitterConsumerSecret = @"aSly9VOGURw3A9uNIPtQMUHeSNPjCTJ5RdplzMHA1MRPhod1PT";
@@ -56,6 +57,17 @@ NSString* const kTwitterBaseUrl = @"https://api.twitter.com";
         NSLog(@"%@", error);
         NSLog(@"Failed to get access token");
         self.loginCompletion(nil, error);
+    }];
+}
+
+- (void)homeTimelineWithParams:(NSDictionary *)params completion:(void (^)(NSArray* tweets, NSError* error))completion {
+    [self GET:@"1.1/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray* tweets = [Tweet tweetsWithArray:responseObject];
+        completion(tweets, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        //TODO: Show UIAlertView
+        NSLog(@"%@", error);
+        completion(nil, error);
     }];
 }
 
