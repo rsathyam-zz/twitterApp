@@ -14,6 +14,6 @@
 - (void)loginWithCompletion:(void (^)(User* user, NSError* error))completion;
 - (void)openURL:(NSURL*)url;
 - (void)homeTimelineWithParams:(NSDictionary *)params completion:(void (^)(NSArray* tweets, NSError* error))completion;
-
+- (void)composeMessageWithParams:(NSDictionary*)params completion:(void(^)(NSError* error)) completion;
 @property (nonatomic, strong) void (^loginCompletion)(User* user, NSError* error);
 @end

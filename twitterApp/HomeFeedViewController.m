@@ -11,6 +11,7 @@
 #import "TwitterClient.h"
 #import "Tweet.h"
 #import "TweetDetailsViewController.h"
+#import "ComposeViewController.h"
 #import "UIImageView+AFNetworking.h"
 
 @interface HomeFeedViewController ()
@@ -54,7 +55,9 @@ static HomeFeedViewCell* _sizingCell = nil;
 }
 
 - (void)onComposeButton {
-    NSLog(@"Compose!!");
+    ComposeViewController* cvc = [[ComposeViewController alloc] init];
+    cvc.user = self.user;
+    [self.navigationController pushViewController:cvc animated:YES];
 }
 
 #pragma mark - UIRefreshControl
@@ -149,6 +152,7 @@ static HomeFeedViewCell* _sizingCell = nil;
         UIGraphicsEndImageContext();
         [cell.tweetProfilePictureLabel setImage:resized];
         tweet.profilePic = resized;
+        tweet.creator.profilePic = resized;
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
         //TODO UIAlertView
         NSLog(@"%@", error);
@@ -162,7 +166,6 @@ static HomeFeedViewCell* _sizingCell = nil;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.feedTableView deselectRowAtIndexPath:indexPath animated:YES];
     TweetDetailsViewController* tdvc = [[TweetDetailsViewController alloc] initWithTweet:self.tweets[indexPath.row]];
-    tdvc.tweetLabel.text = @"WTF!!!";
     [self.navigationController pushViewController:tdvc animated:YES];
 }
 

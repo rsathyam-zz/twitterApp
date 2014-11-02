@@ -30,6 +30,7 @@
     } else {
         //If viewer is initialized go to the home feed view
         HomeFeedViewController* hfvc = [[HomeFeedViewController alloc] init];
+        hfvc.user = user;
         UINavigationController* unc = [[UINavigationController alloc] initWithRootViewController:hfvc];
         self.window.rootViewController = unc;
     }

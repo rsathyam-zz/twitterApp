@@ -24,6 +24,8 @@
         self.retweetCount = number.integerValue;
         number = dictionary[@"favorite_count"];
         self.favoriteCount = number.integerValue;
+        number = dictionary[@"id"];
+        self.tweetID = number.longValue;
     }
     return self;
 }

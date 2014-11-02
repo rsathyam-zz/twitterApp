@@ -8,6 +8,7 @@
 
 #import "TweetDetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "ComposeViewController.h"
 
 @interface TweetDetailsViewController ()
 
@@ -46,6 +47,22 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onReplyClicked:(id)sender {
+    ComposeViewController* cvc = [[ComposeViewController alloc] init];
+    cvc.user = self.tweet.creator;
+    cvc.title = @"Reply";
+    cvc.tweetIDForResponse = self.tweet.tweetID;
+    cvc.composeTextView.text = self.screenNameLabel.text;
+    [self.navigationController pushViewController:cvc animated:YES];
+}
+
+- (IBAction)onRetweetClicked:(id)sender {
+    
+}
+
+- (IBAction)onFavoriteClicked:(id)sender {
 }
 
 - (id)initWithTweet:(Tweet *)tweet {

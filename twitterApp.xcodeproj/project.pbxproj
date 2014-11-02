@@ -26,6 +26,8 @@
 		FA5AA5F11A068340007467C8 /* favtwo.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5AA5F01A068340007467C8 /* favtwo.png */; };
 		FA5AA5F51A068400007467C8 /* retweet_2.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5AA5F41A068400007467C8 /* retweet_2.png */; };
 		FA5AA5F71A06844D007467C8 /* reply_2.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5AA5F61A06844D007467C8 /* reply_2.png */; };
+		FA5AA5FB1A069BA6007467C8 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5AA5F91A069BA6007467C8 /* ComposeViewController.m */; };
+		FA5AA5FC1A069BA6007467C8 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5AA5FA1A069BA6007467C8 /* ComposeViewController.xib */; };
 		FABC008A19FF425400BDFE39 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FABC008819FF425400BDFE39 /* LoginViewController.m */; };
 		FABC008B19FF425400BDFE39 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABC008919FF425400BDFE39 /* LoginViewController.xib */; };
 		FABC008E19FF444A00BDFE39 /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FABC008D19FF444A00BDFE39 /* TwitterClient.m */; };
@@ -73,6 +75,9 @@
 		FA5AA5F01A068340007467C8 /* favtwo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favtwo.png; sourceTree = "<group>"; };
 		FA5AA5F41A068400007467C8 /* retweet_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retweet_2.png; sourceTree = "<group>"; };
 		FA5AA5F61A06844D007467C8 /* reply_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reply_2.png; sourceTree = "<group>"; };
+		FA5AA5F81A069BA6007467C8 /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		FA5AA5F91A069BA6007467C8 /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		FA5AA5FA1A069BA6007467C8 /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
 		FABC008719FF425400BDFE39 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FABC008819FF425400BDFE39 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FABC008919FF425400BDFE39 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -170,6 +175,9 @@
 				FA5AA5EB1A067CAE007467C8 /* TweetDetailsViewController.h */,
 				FA5AA5EC1A067CAE007467C8 /* TweetDetailsViewController.m */,
 				FA5AA5ED1A067CAE007467C8 /* TweetDetailsViewController.xib */,
+				FA5AA5F81A069BA6007467C8 /* ComposeViewController.h */,
+				FA5AA5F91A069BA6007467C8 /* ComposeViewController.m */,
+				FA5AA5FA1A069BA6007467C8 /* ComposeViewController.xib */,
 			);
 			path = twitterApp;
 			sourceTree = "<group>";
@@ -293,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5AA5FC1A069BA6007467C8 /* ComposeViewController.xib in Resources */,
 				FA222B911A05E08900037537 /* reply.png in Resources */,
 				FA222B8B1A059EC000037537 /* HomeFeedViewCell.xib in Resources */,
 				FA5AA5F11A068340007467C8 /* favtwo.png in Resources */,
@@ -363,6 +372,7 @@
 				FA5AA5EE1A067CAE007467C8 /* TweetDetailsViewController.m in Sources */,
 				FABDF71C1A01423B00E03211 /* Tweet.m in Sources */,
 				FA0A18AB19FF3F390040ABE9 /* twitterApp.xcdatamodeld in Sources */,
+				FA5AA5FB1A069BA6007467C8 /* ComposeViewController.m in Sources */,
 				FA0A18A519FF3F390040ABE9 /* main.m in Sources */,
 				FA222B801A05830500037537 /* HomeFeedViewController.m in Sources */,
 			);

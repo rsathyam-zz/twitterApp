@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 SambarLabs. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 @interface User : NSObject
@@ -15,6 +16,7 @@
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, strong) NSString* screenName;
 @property (nonatomic, strong) NSString* profileImageURL;
+@property (nonatomic, strong) UIImage* profilePic;
 @property (nonatomic, strong) NSString* tagLine;
 @property (nonatomic, strong) NSDictionary* userProperties;
 

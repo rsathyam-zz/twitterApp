@@ -88,6 +88,9 @@
                     <state key="normal" image="favtwo.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="onFavoriteClicked:" destination="-1" eventType="touchUpInside" id="pPX-vS-Sqw"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgE-MW-zJQ">
                     <rect key="frame" x="100" y="430" width="30" height="30"/>
@@ -98,6 +101,9 @@
                     <state key="normal" image="retweet_2.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="onRetweetClicked:" destination="-1" eventType="touchUpInside" id="D6J-1t-anK"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWX-IQ-K6y">
                     <rect key="frame" x="10" y="430" width="30" height="30"/>
@@ -109,6 +115,9 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="onReplyClicked:" destination="-1" eventType="touchUpInside" id="Aai-EY-ryw"/>
+                    </connections>
                 </button>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N38-cN-RJU">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

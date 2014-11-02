@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeViewController">
+            <connections>
+                <outlet property="composeTextView" destination="KNX-tw-0UY" id="QL5-rE-eJd"/>
+                <outlet property="nameLabel" destination="7ER-ye-DLd" id="DHq-cR-c3x"/>
+                <outlet property="profilePicView" destination="PxW-LT-ENN" id="Iig-xj-ZZ7"/>
+                <outlet property="screenNameLabel" destination="nTw-nd-KcT" id="LYp-kc-eH2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kCy-Bg-PTk">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="0QE-pP-6cO"/>
+                        <constraint firstAttribute="width" constant="375" id="8bL-Kf-J9g"/>
+                        <constraint firstAttribute="height" constant="44" id="VIA-jh-tsN"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="hGC-xu-JKr"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="Title" id="cBb-6m-Ypw"/>
+                    </items>
+                </navigationBar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PxW-LT-ENN">
+                    <rect key="frame" x="10" y="74" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="bdy-z4-lKg"/>
+                        <constraint firstAttribute="height" constant="60" id="jr2-yD-KZf"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ER-ye-DLd">
+                    <rect key="frame" x="80" y="74" width="45.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Screen name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTw-nd-KcT">
+                    <rect key="frame" x="80" y="104" width="101" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KNX-tw-0UY">
+                    <rect key="frame" x="0.0" y="144" width="375" height="523"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="375" id="VVU-vr-lwm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="KNX-tw-0UY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BGf-Nb-tT0"/>
+                <constraint firstItem="kCy-Bg-PTk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EQq-Tr-7o8"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7ER-ye-DLd" secondAttribute="trailing" id="HwT-tC-2mH"/>
+                <constraint firstItem="KNX-tw-0UY" firstAttribute="top" secondItem="PxW-LT-ENN" secondAttribute="bottom" constant="10" id="ISK-2q-BcL"/>
+                <constraint firstItem="nTw-nd-KcT" firstAttribute="leading" secondItem="7ER-ye-DLd" secondAttribute="leading" id="NYf-ue-1Jb"/>
+                <constraint firstItem="PxW-LT-ENN" firstAttribute="top" secondItem="kCy-Bg-PTk" secondAttribute="bottom" constant="30" id="SNm-eo-fyg"/>
+                <constraint firstItem="kCy-Bg-PTk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="TDF-5y-1ge"/>
+                <constraint firstItem="PxW-LT-ENN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="UIZ-HO-dlP"/>
+                <constraint firstItem="nTw-nd-KcT" firstAttribute="top" secondItem="7ER-ye-DLd" secondAttribute="bottom" constant="10" id="ZYd-DW-fxx"/>
+                <constraint firstItem="7ER-ye-DLd" firstAttribute="leading" secondItem="PxW-LT-ENN" secondAttribute="trailing" constant="10" id="b0T-ZV-vng"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nTw-nd-KcT" secondAttribute="trailing" id="c4O-oh-DoI"/>
+                <constraint firstItem="PxW-LT-ENN" firstAttribute="top" secondItem="7ER-ye-DLd" secondAttribute="top" id="cor-kK-2pE"/>
+                <constraint firstAttribute="bottom" secondItem="KNX-tw-0UY" secondAttribute="bottom" id="qMV-x5-0KC"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="74.5" y="-61.5"/>
+        </view>
+    </objects>
+</document>
