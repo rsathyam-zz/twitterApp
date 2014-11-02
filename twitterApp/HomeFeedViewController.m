@@ -29,6 +29,12 @@ static HomeFeedViewCell* _sizingCell = nil;
     [self.refreshControl addTarget:self action:@selector(onRefresh) forControlEvents:UIControlEventValueChanged];
     
     [self.feedTableView registerNib:[UINib nibWithNibName:@"HomeFeedViewCell" bundle:nil] forCellReuseIdentifier:@"HomeFeedViewCell"];
+    
+    self.navigationItem.title = @"Home";
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sign Out" style:UIBarButtonItemStylePlain target:self action:@selector(onComposeButton)];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Compose" style:UIBarButtonItemStylePlain target:self action:@selector(onComposeButton)];
 
     [[TwitterClient sharedInstance] homeTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
         if (error == nil) {
@@ -44,6 +50,10 @@ static HomeFeedViewCell* _sizingCell = nil;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)onComposeButton {
+    NSLog(@"Compose!!");
 }
 
 #pragma mark - UIRefreshControl
@@ -116,6 +126,8 @@ static HomeFeedViewCell* _sizingCell = nil;
     
     Tweet* tweet = self.tweets[indexPath.row];
     cell.tweetTextLabel.text = tweet.text;
+    [cell.tweetTextLabel setFont:[UIFont fontWithName:@"Arial" size:12]];
+    
     cell.tweetUsernameLabel.text = [@"@" stringByAppendingString:tweet.creator.screenName];
     [cell.tweetUsernameLabel setFont:[UIFont fontWithName:@"Arial" size:13]];
     cell.tweetNameLabel.text = tweet.creator.name;
