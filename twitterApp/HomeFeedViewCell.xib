@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNh-DB-a0d">
-                        <rect key="frame" x="138" y="70" width="353" height="150"/>
+                        <rect key="frame" x="138" y="35" width="353" height="185"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="R2D-Ax-6XH"/>
                         </constraints>
@@ -87,7 +87,7 @@
                         </variation>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eks-IX-71U">
-                        <rect key="frame" x="138" y="10" width="120" height="20"/>
+                        <rect key="frame" x="138" y="10" width="120" height="20.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="120" id="lmS-wY-2DY"/>
                         </constraints>
@@ -95,7 +95,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPR-6Z-XIP">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPR-6Z-XIP">
                         <rect key="frame" x="453" y="10" width="37.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -119,12 +119,15 @@
                     <constraint firstItem="aNh-DB-a0d" firstAttribute="top" secondItem="qsR-nR-Elr" secondAttribute="top" id="Byv-aQ-ZEu"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="D6B-Ya-RGl" secondAttribute="bottom" id="CKI-Ic-F6k"/>
                     <constraint firstItem="3Bk-xz-Gje" firstAttribute="bottom" secondItem="D6B-Ya-RGl" secondAttribute="bottom" id="DfJ-yf-tby"/>
-                    <constraint firstItem="aNh-DB-a0d" firstAttribute="top" relation="greaterThanOrEqual" secondItem="FPR-6Z-XIP" secondAttribute="bottom" constant="5" id="EWo-vD-Z1R"/>
+                    <constraint firstItem="aNh-DB-a0d" firstAttribute="top" secondItem="FPR-6Z-XIP" secondAttribute="bottom" constant="5" id="EWo-vD-Z1R"/>
+                    <constraint firstItem="FPR-6Z-XIP" firstAttribute="top" secondItem="eks-IX-71U" secondAttribute="top" id="Gds-V0-Goe"/>
                     <constraint firstItem="qsR-nR-Elr" firstAttribute="top" secondItem="3Bk-xz-Gje" secondAttribute="top" id="Nan-ld-oVX"/>
                     <constraint firstAttribute="bottom" secondItem="qsR-nR-Elr" secondAttribute="bottom" id="OBk-Qt-hRR"/>
                     <constraint firstAttribute="bottom" secondItem="D6B-Ya-RGl" secondAttribute="bottom" constant="5" id="RUm-ic-Ezg"/>
                     <constraint firstItem="3Bk-xz-Gje" firstAttribute="top" secondItem="qsR-nR-Elr" secondAttribute="top" id="S0F-CA-Ma6"/>
+                    <constraint firstItem="FPR-6Z-XIP" firstAttribute="top" secondItem="ieF-kg-PfO" secondAttribute="top" id="SNS-MT-BHq"/>
                     <constraint firstItem="ieF-kg-PfO" firstAttribute="top" secondItem="Ubm-LT-TcR" secondAttribute="top" constant="10" id="Sva-vb-ZPn"/>
+                    <constraint firstItem="aNh-DB-a0d" firstAttribute="top" secondItem="dAU-CI-53K" secondAttribute="top" id="UJN-ao-tM2"/>
                     <constraint firstItem="D6B-Ya-RGl" firstAttribute="leading" secondItem="3Bk-xz-Gje" secondAttribute="trailing" constant="60" id="UeI-Nc-LTa"/>
                     <constraint firstItem="3Bk-xz-Gje" firstAttribute="leading" secondItem="Ubm-LT-TcR" secondAttribute="leading" constant="10" id="WER-vV-ERc"/>
                     <constraint firstItem="dAU-CI-53K" firstAttribute="leading" secondItem="Ubm-LT-TcR" secondAttribute="leading" constant="8" id="Xmf-w4-wGc"/>
@@ -155,6 +158,8 @@
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="1fE-w7-4DE"/>
+                        <exclude reference="ao5-eh-fI4"/>
+                        <exclude reference="b1K-dm-8DG"/>
                         <exclude reference="ou3-ml-ecv"/>
                         <exclude reference="z5f-OX-PfG"/>
                         <exclude reference="Byv-aQ-ZEu"/>

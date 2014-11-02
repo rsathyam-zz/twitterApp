@@ -73,16 +73,40 @@ static HomeFeedViewCell* _sizingCell = nil;
     return self.tweets.count;
 }
 
+- (NSString* )getTimeStringFromDelta:(NSInteger)delta {
+    NSInteger abs_delta = labs(delta);
+    
+    NSInteger abs_days = abs_delta / (60 * 60 * 24);
+    if (abs_days > 0) {
+        return [NSString stringWithFormat:@"%ldd", (long)abs_days];
+    }
+    abs_delta -= abs_days * (60 * 60 * 24);
+    NSInteger abs_hours = abs_delta / (60 * 60);
+    if (abs_hours > 0) {
+        return [NSString stringWithFormat:@"%ldh", (long)abs_hours];
+    }
+    abs_delta -= abs_hours * (60 * 60);
+    NSInteger abs_minutes = abs_delta / 60;
+    if (abs_minutes > 0) {
+        return [NSString stringWithFormat:@"%ldm", (long)abs_minutes];
+    } else {
+        return [NSString stringWithFormat:@"%lds", (long)abs_delta];
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeFeedViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedViewCell"];
     
     Tweet* tweet = self.tweets[indexPath.row];
     cell.tweetTextLabel.text = tweet.text;
     cell.tweetUsernameLabel.text = [@"@" stringByAppendingString:tweet.creator.screenName];
-    [cell.tweetUsernameLabel setFont:[UIFont fontWithName:@"Arial" size:11]];
+    [cell.tweetUsernameLabel setFont:[UIFont fontWithName:@"Arial" size:13]];
     cell.tweetNameLabel.text = tweet.creator.name;
+    NSDate *date = tweet.createdAt;
+    NSInteger delta = [date timeIntervalSinceNow];
+    cell.tweetTimeLabel.text = [self getTimeStringFromDelta:delta];
     [cell.tweetNameLabel setFont:[UIFont fontWithName:@"Arial-BoldMT" size:13]];
-    
+    [cell.tweetTimeLabel setFont:[UIFont fontWithName:@"Arial" size:13]];
     
     NSURL* profilePictureURL = [NSURL URLWithString:[tweet.creator.profileImageURL stringByReplacingOccurrencesOfString:@"_normal.jpeg" withString:@".jpeg"]];
     NSURLRequest* profilePictureRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5];
