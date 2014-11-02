@@ -8,6 +8,7 @@
 
 #import "HomeFeedViewCell.h"
 #import "ComposeViewController.h"
+#import "TwitterClient.h"
 
 @implementation HomeFeedViewCell
 
@@ -31,8 +32,19 @@
 }
 
 - (IBAction)onRetweetClicked:(id)sender {
+    [[TwitterClient sharedInstance] retweetTweet:self.tweet completion:^(NSError *error) {
+        if (error != nil) {
+            NSLog(@"Retweeting failed!");
+        }
+    }];
 }
 
 - (IBAction)onFavoriteClicked:(id)sender {
+    NSDictionary* params = @{@"id": [NSNumber numberWithLong: self.tweet.tweetID]};
+    [[TwitterClient sharedInstance] favoriteMessageWithParams:params completion:^(NSError *error) {
+        if (error != nil) {
+            NSLog(@"Favoriting failed!");
+        }
+    }];
 }
 @end

@@ -458,11 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "twitterApp/HomeFeedViewCell.m"
-            timestampString = "436664676.359388"
+            timestampString = "436664942.80556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "-onReplyClicked:"
             landmarkType = "5">
          </BreakpointContent>
