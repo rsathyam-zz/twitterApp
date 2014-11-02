@@ -9,6 +9,7 @@
 #import "TweetDetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "ComposeViewController.h"
+#import "TwitterClient.h"
 
 @interface TweetDetailsViewController ()
 
@@ -59,7 +60,13 @@
 }
 
 - (IBAction)onRetweetClicked:(id)sender {
-    
+    [[TwitterClient sharedInstance] retweetTweet:self.tweet completion:^(NSError *error) {
+        if (error != nil) {
+            NSLog(@"Retweeting failed!");
+        } else {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }];
 }
 
 - (IBAction)onFavoriteClicked:(id)sender {

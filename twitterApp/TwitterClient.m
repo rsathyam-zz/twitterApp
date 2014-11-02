@@ -80,4 +80,14 @@ NSString* const kTwitterBaseUrl = @"https://api.twitter.com";
     }];
 }
 
+- (void)retweetTweet:(Tweet *)tweet completion:(void(^)(NSError* error)) completion {
+    NSString* retweet_string = [NSString stringWithFormat:@"1.1/statuses/retweet/%ld.json", tweet.tweetID];
+    [self POST:retweet_string parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        completion(nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+        completion(error);
+    }];
+}
+
 @end
