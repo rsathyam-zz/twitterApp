@@ -70,7 +70,15 @@
 }
 
 - (IBAction)onFavoriteClicked:(id)sender {
-}
+    NSDictionary* params = @{@"id": [NSNumber numberWithLong: self.tweet.tweetID]};
+    [[TwitterClient sharedInstance] favoriteMessageWithParams:params completion:^(NSError *error) {
+        if (error != nil) {
+            NSLog(@"Favoriting failed!");
+        } else {
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }];
+ }
 
 - (id)initWithTweet:(Tweet *)tweet {
     self = [super init];
