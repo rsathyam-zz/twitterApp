@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeFeedViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *tweetTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tweetTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tweetUsernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tweetNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *tweetProfilePictureLabel;
+
 
 @end

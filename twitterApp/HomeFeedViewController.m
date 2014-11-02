@@ -10,12 +10,13 @@
 #import "HomeFeedViewCell.h"
 #import "TwitterClient.h"
 #import "Tweet.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface HomeFeedViewController ()
-
 @end
 
 @implementation HomeFeedViewController
+static HomeFeedViewCell* _sizingCell = nil;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -62,16 +63,39 @@
     return 1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 250.f;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     return self.tweets.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HomeFeedViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedViewCell" forIndexPath:indexPath];
+    HomeFeedViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedViewCell"];
     
     Tweet* tweet = self.tweets[indexPath.row];
     cell.tweetTextLabel.text = tweet.text;
+    cell.tweetUsernameLabel.text = tweet.creator.screenName;
+    cell.tweetNameLabel.text = tweet.creator.name;
+    
+    NSURL* profilePictureURL = [NSURL URLWithString:tweet.profileImageURL];
+    NSURLRequest* profilePictureRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5];
+    CGSize targetSize = cell.tweetProfilePictureLabel.bounds.size;
+    
+    [cell.tweetProfilePictureLabel setImageWithURLRequest:profilePictureRequest placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0.0);
+        [image drawInRect:CGRectMake(0,0, targetSize.width, targetSize.height)];
+        UIImage* resized = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        [cell.tweetProfilePictureLabel setImage:resized];
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+        //TODO UIAlertView
+        NSLog(@"%@", error);
+    }];
     
     // Configure the cell...
     

@@ -29,7 +29,9 @@
         self.window.rootViewController = [[LoginViewController alloc] init];
     } else {
         //If viewer is initialized go to the home feed view
-        self.window.rootViewController = [[HomeFeedViewController alloc] init];
+        HomeFeedViewController* hfvc = [[HomeFeedViewController alloc] init];
+        UINavigationController* unc = [[UINavigationController alloc] initWithRootViewController:hfvc];
+        self.window.rootViewController = unc;
     }
     
     [self.window makeKeyAndVisible];

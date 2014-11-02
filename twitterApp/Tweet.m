@@ -19,6 +19,8 @@
         formatter.dateFormat = @"EEE MMM d HH:mm:ss Z y";
         
         self.createdAt = [formatter dateFromString:createdAtString];
+        self.creator = [[User alloc] initWithDictionary:dictionary[@"user"]];
+        self.profileImageURL = dictionary[@"profile_image_url"];
     }
     return self;
 }
