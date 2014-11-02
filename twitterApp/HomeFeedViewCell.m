@@ -20,4 +20,12 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)onReplyClicked:(id)sender {
+}
+
+- (IBAction)onRetweetClicked:(id)sender {
+}
+
+- (IBAction)onFavoriteClicked:(id)sender {
+}
 @end

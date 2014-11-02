@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *tweetUsernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tweetNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *tweetProfilePictureLabel;
-
-
+- (IBAction)onReplyClicked:(id)sender;
+- (IBAction)onRetweetClicked:(id)sender;
+- (IBAction)onFavoriteClicked:(id)sender;
 @end
