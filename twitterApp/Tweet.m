@@ -17,10 +17,13 @@
         
         NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = @"EEE MMM d HH:mm:ss Z y";
-        
         self.createdAt = [formatter dateFromString:createdAtString];
         User* user = [[User alloc] initWithDictionary:dictionary[@"user"]];
         self.creator = user;
+        NSNumber* number = dictionary[@"retweet_count"];
+        self.retweetCount = number.integerValue;
+        number = dictionary[@"favorite_count"];
+        self.favoriteCount = number.integerValue;
     }
     return self;
 }

@@ -10,6 +10,7 @@
 #import "HomeFeedViewCell.h"
 #import "TwitterClient.h"
 #import "Tweet.h"
+#import "TweetDetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 
 @interface HomeFeedViewController ()
@@ -147,7 +148,7 @@ static HomeFeedViewCell* _sizingCell = nil;
         UIImage* resized = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         [cell.tweetProfilePictureLabel setImage:resized];
-        
+        tweet.profilePic = resized;
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
         //TODO UIAlertView
         NSLog(@"%@", error);
@@ -156,6 +157,13 @@ static HomeFeedViewCell* _sizingCell = nil;
     // Configure the cell...
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.feedTableView deselectRowAtIndexPath:indexPath animated:YES];
+    TweetDetailsViewController* tdvc = [[TweetDetailsViewController alloc] initWithTweet:self.tweets[indexPath.row]];
+    tdvc.tweetLabel.text = @"WTF!!!";
+    [self.navigationController pushViewController:tdvc animated:YES];
 }
 
 
