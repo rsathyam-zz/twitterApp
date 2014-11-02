@@ -7,6 +7,7 @@
 //
 
 #import "HomeFeedViewCell.h"
+#import "ComposeViewController.h"
 
 @implementation HomeFeedViewCell
 
@@ -21,6 +22,12 @@
 }
 
 - (IBAction)onReplyClicked:(id)sender {
+    ComposeViewController* cvc = [[ComposeViewController alloc] init];
+    cvc.user = self.tweet.creator;
+    cvc.title = @"Reply";
+    cvc.tweetIDForResponse = self.tweet.tweetID;
+    cvc.composeTextView.text = self.tweetUsernameLabel.text;
+    [self.navController pushViewController:cvc animated:YES];
 }
 
 - (IBAction)onRetweetClicked:(id)sender {

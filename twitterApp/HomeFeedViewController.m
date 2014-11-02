@@ -141,6 +141,9 @@ static HomeFeedViewCell* _sizingCell = nil;
     [cell.tweetNameLabel setFont:[UIFont fontWithName:@"Arial-BoldMT" size:13]];
     [cell.tweetTimeLabel setFont:[UIFont fontWithName:@"Arial" size:13]];
     
+    cell.navController = self.navigationController;
+    cell.tweet = tweet;
+    
     NSURL* profilePictureURL = [NSURL URLWithString:[tweet.creator.profileImageURL stringByReplacingOccurrencesOfString:@"_normal.jpeg" withString:@".jpeg"]];
     NSURLRequest* profilePictureRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5];
     CGSize targetSize = cell.tweetProfilePictureLabel.bounds.size;

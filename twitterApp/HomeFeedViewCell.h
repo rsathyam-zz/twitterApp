@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Tweet.h"
 
 @interface HomeFeedViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *tweetTimeLabel;
@@ -14,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *tweetUsernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tweetNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *tweetProfilePictureLabel;
+@property (nonatomic, strong) Tweet* tweet;
+@property (nonatomic, strong) UINavigationController* navController;
 - (IBAction)onReplyClicked:(id)sender;
 - (IBAction)onRetweetClicked:(id)sender;
 - (IBAction)onFavoriteClicked:(id)sender;
