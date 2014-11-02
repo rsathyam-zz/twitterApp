@@ -130,7 +130,7 @@ static HomeFeedViewCell* _sizingCell = nil;
     
     Tweet* tweet = self.tweets[indexPath.row];
     cell.tweetTextLabel.text = tweet.text;
-    [cell.tweetTextLabel setFont:[UIFont fontWithName:@"Arial" size:12]];
+    [cell.tweetTextLabel setFont:[UIFont fontWithName:@"Arial" size:13]];
     
     cell.tweetUsernameLabel.text = [@"@" stringByAppendingString:tweet.creator.screenName];
     [cell.tweetUsernameLabel setFont:[UIFont fontWithName:@"Arial" size:13]];
