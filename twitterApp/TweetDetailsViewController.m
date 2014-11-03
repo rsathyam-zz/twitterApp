@@ -64,7 +64,9 @@
         if (error != nil) {
             NSLog(@"Retweeting failed!");
         } else {
-            [self.navigationController popViewControllerAnimated:YES];
+            NSInteger retweetCount = [self.retweetsLabel.text integerValue];
+            retweetCount += 1;
+            self.retweetsLabel.text = [NSString stringWithFormat:@"%ld", retweetCount];
         }
     }];
 }
@@ -75,7 +77,9 @@
         if (error != nil) {
             NSLog(@"Favoriting failed!");
         } else {
-            [self.navigationController popViewControllerAnimated:YES];
+            NSInteger favoritesCount = [self.favoritesLabel.text integerValue];
+            favoritesCount += 1;
+            self.favoritesLabel.text = [NSString stringWithFormat:@"%ld", favoritesCount];
         }
     }];
  }
