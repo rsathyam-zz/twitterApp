@@ -49,6 +49,11 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Tweet" style:UIBarButtonItemStylePlain target:self action:@selector(onTweetButton)];
 }
 
+- (void)textViewDidChange:(UITextView *)textView {
+    NSInteger remainingLength = 140 - textView.text.length;
+    self.numCharsLabel.text = [NSString stringWithFormat:@"%ld", remainingLength];
+}
+
 - (void)onCancelButton {
     [self.navigationController popViewControllerAnimated:YES];
 }

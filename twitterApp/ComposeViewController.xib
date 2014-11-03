@@ -6,8 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ComposeViewController">
             <connections>
+                <outlet property="charactersRemainingLabel" destination="jcN-gy-pNv" id="zgx-Zs-w4x"/>
                 <outlet property="composeTextView" destination="KNX-tw-0UY" id="QL5-rE-eJd"/>
                 <outlet property="nameLabel" destination="7ER-ye-DLd" id="DHq-cR-c3x"/>
+                <outlet property="numCharsLabel" destination="veg-sl-aWM" id="to7-sS-Qyi"/>
                 <outlet property="profilePicView" destination="PxW-LT-ENN" id="Iig-xj-ZZ7"/>
                 <outlet property="screenNameLabel" destination="nTw-nd-KcT" id="LYp-kc-eH2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -49,11 +51,23 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Characters Remaining" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcN-gy-pNv">
+                    <rect key="frame" x="245" y="74" width="119.5" height="13.5"/>
+                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veg-sl-aWM">
+                    <rect key="frame" x="220" y="74" width="20.5" height="13.5"/>
+                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KNX-tw-0UY">
-                    <rect key="frame" x="0.0" y="144" width="375" height="523"/>
+                    <rect key="frame" x="10" y="144" width="355" height="523"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="375" id="VVU-vr-lwm"/>
+                        <constraint firstAttribute="width" constant="355" id="VVU-vr-lwm"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -61,9 +75,13 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="jcN-gy-pNv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7ER-ye-DLd" secondAttribute="trailing" constant="10" id="0Kt-bK-Bmu"/>
+                <constraint firstItem="KNX-tw-0UY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="4kp-KO-kh2"/>
+                <constraint firstItem="jcN-gy-pNv" firstAttribute="leading" secondItem="veg-sl-aWM" secondAttribute="trailing" constant="5" id="808-oW-9Cd"/>
                 <constraint firstItem="KNX-tw-0UY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BGf-Nb-tT0"/>
                 <constraint firstItem="kCy-Bg-PTk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EQq-Tr-7o8"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7ER-ye-DLd" secondAttribute="trailing" id="HwT-tC-2mH"/>
+                <constraint firstItem="7ER-ye-DLd" firstAttribute="top" secondItem="jcN-gy-pNv" secondAttribute="top" id="I3v-gR-qa5"/>
                 <constraint firstItem="KNX-tw-0UY" firstAttribute="top" secondItem="PxW-LT-ENN" secondAttribute="bottom" constant="10" id="ISK-2q-BcL"/>
                 <constraint firstItem="nTw-nd-KcT" firstAttribute="leading" secondItem="7ER-ye-DLd" secondAttribute="leading" id="NYf-ue-1Jb"/>
                 <constraint firstItem="PxW-LT-ENN" firstAttribute="top" secondItem="kCy-Bg-PTk" secondAttribute="bottom" constant="30" id="SNm-eo-fyg"/>
@@ -71,12 +89,23 @@
                 <constraint firstItem="PxW-LT-ENN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="UIZ-HO-dlP"/>
                 <constraint firstItem="nTw-nd-KcT" firstAttribute="top" secondItem="7ER-ye-DLd" secondAttribute="bottom" constant="10" id="ZYd-DW-fxx"/>
                 <constraint firstItem="7ER-ye-DLd" firstAttribute="leading" secondItem="PxW-LT-ENN" secondAttribute="trailing" constant="10" id="b0T-ZV-vng"/>
+                <constraint firstAttribute="trailing" secondItem="jcN-gy-pNv" secondAttribute="trailing" constant="10" id="bqH-AE-Nff"/>
                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nTw-nd-KcT" secondAttribute="trailing" id="c4O-oh-DoI"/>
                 <constraint firstItem="PxW-LT-ENN" firstAttribute="top" secondItem="7ER-ye-DLd" secondAttribute="top" id="cor-kK-2pE"/>
+                <constraint firstItem="veg-sl-aWM" firstAttribute="top" secondItem="jcN-gy-pNv" secondAttribute="top" id="eHK-yT-bPs"/>
+                <constraint firstAttribute="trailing" secondItem="KNX-tw-0UY" secondAttribute="trailing" constant="10" id="jNC-Qk-bkV"/>
+                <constraint firstItem="veg-sl-aWM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7ER-ye-DLd" secondAttribute="trailing" id="oEp-ez-GO5"/>
                 <constraint firstAttribute="bottom" secondItem="KNX-tw-0UY" secondAttribute="bottom" id="qMV-x5-0KC"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="74.5" y="-61.5"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="HwT-tC-2mH"/>
+                    <exclude reference="BGf-Nb-tT0"/>
+                    <exclude reference="0Kt-bK-Bmu"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="-194.5" y="-76.5"/>
         </view>
     </objects>
 </document>

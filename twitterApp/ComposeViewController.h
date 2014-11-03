@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicView;
 @property (weak, nonatomic) IBOutlet UITextView *composeTextView;
+@property (weak, nonatomic) IBOutlet UILabel *charactersRemainingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *numCharsLabel;
 @property (nonatomic, strong) User* user;
 @property NSInteger tweetIDForResponse;
 @end
