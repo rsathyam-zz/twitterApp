@@ -73,6 +73,7 @@ static HomeFeedViewCell* _sizingCell = nil;
     [User setCurrentUser:nil];
     [[TwitterClient sharedInstance].requestSerializer removeAccessToken];
     LoginViewController* lvc = [[LoginViewController alloc] init];
+    [self.navigationItem setHidesBackButton:YES animated:YES];
     [self.navigationController pushViewController:lvc animated:YES];
 }
 

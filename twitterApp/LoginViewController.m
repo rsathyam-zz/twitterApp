@@ -21,12 +21,10 @@
     [[TwitterClient sharedInstance] loginWithCompletion:^(User *user, NSError *error) {
         if (user != nil) {
             [User setCurrentUser:user];
-            NSLog(@"Welcome to %@", user.userProperties[@"name"]);
             HomeFeedViewController* hfvc = [[HomeFeedViewController alloc] init];
-            [self.navigationController pushViewController:hfvc animated:YES];
+            UINavigationController *nvc = [[UINavigationController alloc]initWithRootViewController:hfvc];
+            [self presentViewController:nvc animated:YES completion:nil];
             //Modally presents tweet view
-        } else {
-
         }
     }];
 }
