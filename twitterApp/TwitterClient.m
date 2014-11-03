@@ -90,8 +90,27 @@ NSString* const kTwitterBaseUrl = @"https://api.twitter.com";
     }];
 }
 
-- (void)retweetTweet:(Tweet *)tweet completion:(void(^)(NSError* error)) completion {
+- (void)unfavoriteMessageWithParams:(NSDictionary *)params completion:(void(^)(NSError* error)) completion {
+    [self POST:@"1.1/favorites/destroy.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        completion(nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+        completion(error);
+    }];
+}
+
+- (void)retweetTweet:(Tweet *)tweet completion:(void(^)(Tweet* tweet, NSError* error)) completion {
     NSString* retweet_string = [NSString stringWithFormat:@"1.1/statuses/retweet/%ld.json", tweet.tweetID];
+    [self POST:retweet_string parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        completion(tweet, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+        completion(nil, error);
+    }];
+}
+
+- (void)unretweetTweet:(NSInteger)tweet_id completion:(void(^)(NSError* error)) completion {
+    NSString* retweet_string = [NSString stringWithFormat:@"1.1/statuses/destroy/%ld.json", tweet_id];
     [self POST:retweet_string parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         completion(nil);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

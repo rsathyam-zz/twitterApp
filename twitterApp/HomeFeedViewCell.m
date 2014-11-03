@@ -32,19 +32,48 @@
 }
 
 - (IBAction)onRetweetClicked:(id)sender {
-    [[TwitterClient sharedInstance] retweetTweet:self.tweet completion:^(NSError *error) {
-        if (error != nil) {
-            NSLog(@"Retweeting failed!");
-        }
-    }];
+    if (!self.tweet.isRetweeted) {
+        [[TwitterClient sharedInstance] retweetTweet:self.tweet completion:^(Tweet* tweet, NSError *error) {
+            if (error != nil) {
+                NSLog(@"Retweeting failed!");
+            } else {
+                self.retweetButton.tintColor = [UIColor darkGrayColor];
+                self.tweet.isRetweeted = YES;
+                self.tweet.retweetID = tweet.tweetID;
+            }
+        }];
+    } else {
+        [[TwitterClient sharedInstance] unretweetTweet:self.tweet.retweetID completion:^(NSError *error) {
+            if (error != nil) {
+                NSLog(@"unetweeting failed!");
+            } else {
+                self.retweetButton.tintColor = [UIColor lightGrayColor];
+                self.tweet.isRetweeted = NO;
+            }
+        }];
+    }
 }
 
 - (IBAction)onFavoriteClicked:(id)sender {
     NSDictionary* params = @{@"id": [NSNumber numberWithLong: self.tweet.tweetID]};
-    [[TwitterClient sharedInstance] favoriteMessageWithParams:params completion:^(NSError *error) {
-        if (error != nil) {
-            NSLog(@"Favoriting failed!");
-        }
-    }];
+    if (!self.tweet.isFavorited) {
+        [[TwitterClient sharedInstance] favoriteMessageWithParams:params completion:^(NSError *error) {
+            if (error != nil) {
+                NSLog(@"Favoriting failed!");
+            } else {
+                self.tweet.isFavorited = YES;
+            self.favoriteButton.tintColor = [UIColor darkGrayColor];
+            }
+        }];
+    } else {
+        [[TwitterClient sharedInstance] unfavoriteMessageWithParams:params completion:^(NSError *error) {
+            if (error != nil) {
+                NSLog(@"Unfavoriting failed!");
+            } else {
+                self.tweet.isFavorited = NO;
+                self.favoriteButton.tintColor = [UIColor lightGrayColor];
+            }
+        }];
+    }
 }
 @end

@@ -43,6 +43,14 @@
     self.retweetsLabel.text = [NSString stringWithFormat:@"%ld", self.tweet.retweetCount];
     [self.retweetsLabel setFont:[UIFont fontWithName:@"Arial" size:14]];
     
+    if (self.tweet.isRetweeted) {
+        self.retweetButton.tintColor = [UIColor darkGrayColor];
+    }
+    
+    if (self.tweet.isFavorited) {
+        self.favoriteButton.tintColor = [UIColor darkGrayColor];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,28 +68,62 @@
 }
 
 - (IBAction)onRetweetClicked:(id)sender {
-    [[TwitterClient sharedInstance] retweetTweet:self.tweet completion:^(NSError *error) {
+    if(self.tweet.isRetweeted == NO) {
+        [[TwitterClient sharedInstance] retweetTweet:self.tweet completion:^(Tweet* tweet, NSError *error) {
         if (error != nil) {
             NSLog(@"Retweeting failed!");
         } else {
             NSInteger retweetCount = [self.retweetsLabel.text integerValue];
             retweetCount += 1;
             self.retweetsLabel.text = [NSString stringWithFormat:@"%ld", retweetCount];
+            self.retweetButton.tintColor = [UIColor darkGrayColor];
+            self.tweet.isRetweeted = YES;
+            self.tweet.retweetID = tweet.tweetID;
         }
-    }];
+        }];
+    } else {
+        [[TwitterClient sharedInstance] unretweetTweet:self.tweet.retweetID completion:^(NSError *error) {
+            if (error != nil) {
+                NSLog(@"unRetweeting failed!");
+            } else {
+                NSInteger retweetCount = [self.retweetsLabel.text integerValue];
+                retweetCount -= 1;
+                self.retweetsLabel.text = [NSString stringWithFormat:@"%ld", retweetCount];
+                self.retweetButton.tintColor = [UIColor lightGrayColor];
+                self.tweet.isRetweeted = NO;
+            }
+        }];
+    }
 }
 
 - (IBAction)onFavoriteClicked:(id)sender {
-    NSDictionary* params = @{@"id": [NSNumber numberWithLong: self.tweet.tweetID]};
-    [[TwitterClient sharedInstance] favoriteMessageWithParams:params completion:^(NSError *error) {
-        if (error != nil) {
-            NSLog(@"Favoriting failed!");
-        } else {
-            NSInteger favoritesCount = [self.favoritesLabel.text integerValue];
-            favoritesCount += 1;
-            self.favoritesLabel.text = [NSString stringWithFormat:@"%ld", favoritesCount];
-        }
-    }];
+    if (self.tweet.isFavorited == NO) {
+        NSDictionary* params = @{@"id": [NSNumber numberWithLong: self.tweet.tweetID]};
+        [[TwitterClient sharedInstance] favoriteMessageWithParams:params completion:^(NSError *error) {
+            if (error != nil) {
+                NSLog(@"Favoriting failed!");
+            } else {
+                NSInteger favoritesCount = [self.favoritesLabel.text integerValue];
+                favoritesCount += 1;
+                self.favoritesLabel.text = [NSString stringWithFormat:@"%ld", favoritesCount];
+                self.favoriteButton.tintColor = [UIColor darkGrayColor];
+                self.tweet.isFavorited = YES;
+            }
+        }];
+    } else {
+        NSDictionary* params = @{@"id": [NSNumber numberWithLong: self.tweet.tweetID]};
+        [[TwitterClient sharedInstance] unfavoriteMessageWithParams:params completion:^(NSError *error) {
+            if (error != nil) {
+                NSLog(@"Unfavoriting failed!");
+            } else {
+                NSInteger favoritesCount = [self.favoritesLabel.text integerValue];
+                favoritesCount -= 1;
+                self.favoritesLabel.text = [NSString stringWithFormat:@"%ld", favoritesCount];
+                self.favoriteButton.tintColor = [UIColor lightGrayColor];
+                self.tweet.isFavorited = NO;
+            }
+        }];
+    }
  }
 
 - (id)initWithTweet:(Tweet *)tweet {

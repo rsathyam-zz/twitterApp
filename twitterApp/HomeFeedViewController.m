@@ -160,7 +160,15 @@ static HomeFeedViewCell* _sizingCell = nil;
     cell.navController = self.navigationController;
     cell.tweet = tweet;
     
-    NSURL* profilePictureURL = [NSURL URLWithString:[tweet.creator.profileImageURL stringByReplacingOccurrencesOfString:@"_normal.jpeg" withString:@".jpeg"]];
+    if (tweet.isFavorited) {
+        cell.favoriteButton.tintColor = [UIColor darkGrayColor];
+    }
+    
+    if (tweet.isRetweeted) {
+        cell.retweetButton.tintColor = [UIColor darkGrayColor];
+    }
+    
+    NSURL* profilePictureURL = [NSURL URLWithString:[tweet.creator.profileImageURL stringByReplacingOccurrencesOfString:@"_normal." withString:@"."]];
     NSURLRequest* profilePictureRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5];
     CGSize targetSize = cell.tweetProfilePictureLabel.bounds.size;
     

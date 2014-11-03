@@ -17,7 +17,10 @@
 @property (nonatomic, strong) User* creator;
 @property (nonatomic, strong) UIImage* profilePic;
 @property NSInteger tweetID;
+@property NSInteger retweetID;
 @property NSInteger retweetCount;
 @property NSInteger favoriteCount;
+@property BOOL isRetweeted;
+@property BOOL isFavorited;
 + (NSArray *)tweetsWithArray:(NSArray *)array;
 @end

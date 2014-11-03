@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *tweetProfilePictureLabel;
 @property (nonatomic, strong) Tweet* tweet;
 @property (nonatomic, strong) UINavigationController* navController;
+@property (weak, nonatomic) IBOutlet UIButton *retweetButton;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
 - (IBAction)onReplyClicked:(id)sender;
 - (IBAction)onRetweetClicked:(id)sender;
 - (IBAction)onFavoriteClicked:(id)sender;

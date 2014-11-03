@@ -26,6 +26,9 @@
         self.favoriteCount = number.integerValue;
         number = dictionary[@"id"];
         self.tweetID = number.longValue;
+        self.retweetID = 0;
+        self.isFavorited = [[dictionary objectForKey:@"favorited"]boolValue];
+        self.isRetweeted = [[dictionary objectForKey:@"retweeted"]boolValue];
     }
     return self;
 }

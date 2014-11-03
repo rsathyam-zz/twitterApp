@@ -35,7 +35,7 @@
                                 <attributes>
                                     <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
@@ -154,13 +154,15 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="favoriteButton" destination="XRd-IH-TbB" id="i1m-QA-Rgl"/>
+                <outlet property="retweetButton" destination="h3m-KP-XC4" id="2M8-jZ-G2B"/>
                 <outlet property="tweetNameLabel" destination="ieF-kg-PfO" id="B8S-X7-3oK"/>
                 <outlet property="tweetProfilePictureLabel" destination="dAU-CI-53K" id="o8C-dx-DaR"/>
                 <outlet property="tweetTextLabel" destination="aNh-DB-a0d" id="3kH-SS-9ZE"/>
                 <outlet property="tweetTimeLabel" destination="FPR-6Z-XIP" id="8ir-66-Vtc"/>
                 <outlet property="tweetUsernameLabel" destination="eks-IX-71U" id="R8d-zg-ltV"/>
             </connections>
-            <point key="canvasLocation" x="315.5" y="275"/>
+            <point key="canvasLocation" x="476.5" y="251"/>
         </tableViewCell>
     </objects>
     <resources>

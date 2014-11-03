@@ -6,9 +6,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TweetDetailsViewController">
             <connections>
+                <outlet property="favoriteButton" destination="QCW-Hy-Q4g" id="o9g-AY-wkk"/>
                 <outlet property="favoritesLabel" destination="T8y-Eu-2bk" id="4fi-5a-5aB"/>
                 <outlet property="nameLabel" destination="EEp-rb-s6l" id="0f0-gx-NsF"/>
                 <outlet property="profileImageView" destination="1tz-Xc-VrT" id="yrc-5c-n9E"/>
+                <outlet property="replyButton" destination="dWX-IQ-K6y" id="fdC-bh-Eg4"/>
+                <outlet property="retweetButton" destination="lgE-MW-zJQ" id="VDh-0J-mQa"/>
                 <outlet property="retweetsLabel" destination="x72-IU-PVG" id="iiQ-fa-acQ"/>
                 <outlet property="screenNameLabel" destination="BRa-1I-cj6" id="eGL-bt-fZ7"/>
                 <outlet property="timeLabel" destination="lid-C0-rzt" id="G7y-fK-LbD"/>
@@ -187,7 +190,7 @@
                     <exclude reference="wNv-ee-gsh"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="-239.5" y="141.5"/>
+            <point key="canvasLocation" x="-218.5" y="133.5"/>
         </view>
         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="reply.png" id="x56-ct-Coo">
             <rect key="frame" x="0.0" y="0.0" width="396" height="380"/>
