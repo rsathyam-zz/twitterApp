@@ -13,6 +13,7 @@
 #import "TweetDetailsViewController.h"
 #import "ComposeViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "LoginViewController.h"
 
 @interface HomeFeedViewController ()
 @property UIRefreshControl *refreshControl;
@@ -34,7 +35,7 @@ static HomeFeedViewCell* _sizingCell = nil;
     
     self.navigationItem.title = @"Home";
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sign Out" style:UIBarButtonItemStylePlain target:self action:@selector(onComposeButton)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Sign Out" style:UIBarButtonItemStylePlain target:self action:@selector(onLogoutButton)];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Compose" style:UIBarButtonItemStylePlain target:self action:@selector(onComposeButton)];
 
@@ -58,6 +59,13 @@ static HomeFeedViewCell* _sizingCell = nil;
     ComposeViewController* cvc = [[ComposeViewController alloc] init];
     cvc.user = self.user;
     [self.navigationController pushViewController:cvc animated:YES];
+}
+
+- (void)onLogoutButton {
+    [User setCurrentUser:nil];
+    [[TwitterClient sharedInstance].requestSerializer removeAccessToken];
+    LoginViewController* lvc = [[LoginViewController alloc] init];
+    [self.navigationController pushViewController:lvc animated:YES];
 }
 
 #pragma mark - UIRefreshControl

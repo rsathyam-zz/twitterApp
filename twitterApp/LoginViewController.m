@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "HomeFeedViewController.h"
 #import "TwitterClient.h"
 #import "user.h"
 
@@ -21,6 +22,8 @@
         if (user != nil) {
             [User setCurrentUser:user];
             NSLog(@"Welcome to %@", user.userProperties[@"name"]);
+            HomeFeedViewController* hfvc = [[HomeFeedViewController alloc] init];
+            [self.navigationController pushViewController:hfvc animated:YES];
             //Modally presents tweet view
         } else {
 
