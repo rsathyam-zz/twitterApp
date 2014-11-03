@@ -41,7 +41,15 @@ static HomeFeedViewCell* _sizingCell = nil;
 
     [[TwitterClient sharedInstance] homeTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
         if (error == nil) {
-            self.tweets = [[NSArray alloc] initWithArray:tweets];
+            //Fetch the tweet from cache
+            NSCache *cache = [[NSCache alloc]init];
+            Tweet* tweet = [cache objectForKey:@"new_tweet"];
+            NSMutableArray *mutableTweets = [[NSMutableArray alloc] init];
+            if (tweet != nil) {
+                [mutableTweets addObject:tweet];
+            }
+            [mutableTweets addObjectsFromArray:tweets];
+            self.tweets = [[NSArray alloc] initWithArray:mutableTweets];
             [self.feedTableView reloadData];
         } else {
             NSLog(@"%@", error);

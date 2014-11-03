@@ -9,6 +9,7 @@
 #import "ComposeViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "TwitterClient.h"
+#import "HomeFeedViewController.h"
 
 @interface ComposeViewController ()
 
@@ -64,11 +65,15 @@
           [NSNumber numberWithInteger:self.tweetIDForResponse],@"in_reply_to_status_id",
           nil
         ];
-    [[TwitterClient sharedInstance] composeMessageWithParams:params completion:^(NSError *error){
+    [[TwitterClient sharedInstance] composeMessageWithParams:params completion:^(Tweet* tweet, NSError *error){
         if (error != nil) {
-            NSLog(@"(Compose failed!");
+            NSLog(@"Compose failed!");
         } else {
-            [self.navigationController popViewControllerAnimated:YES];
+            //Add this tweet to cache
+            NSCache *cache = [[NSCache alloc]init];
+            [cache setObject:tweet forKey:@"new_tweet"];
+            HomeFeedViewController* hfvc = [[HomeFeedViewController alloc] initWithUser:self.user];
+            [self.navigationController pushViewController:hfvc animated:YES];
         };
     }];
 }
