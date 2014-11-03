@@ -65,7 +65,7 @@ static HomeFeedViewCell* _sizingCell = nil;
 
 - (void)onComposeButton {
     ComposeViewController* cvc = [[ComposeViewController alloc] init];
-    cvc.user = self.user;
+    cvc.user = [User getCurrentUser];
     [self.navigationController pushViewController:cvc animated:YES];
 }
 
