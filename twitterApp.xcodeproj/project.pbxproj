@@ -30,8 +30,6 @@
 		FA5AA5FC1A069BA6007467C8 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5AA5FA1A069BA6007467C8 /* ComposeViewController.xib */; };
 		FAA0077F1A0B0C510009B45C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0077D1A0B0C510009B45C /* HomeViewController.m */; };
 		FAA007801A0B0C510009B45C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA0077E1A0B0C510009B45C /* HomeViewController.xib */; };
-		FAA007841A0B47620009B45C /* HamburberTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA007821A0B47620009B45C /* HamburberTableTableViewController.m */; };
-		FAA007851A0B47620009B45C /* HamburberTableTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA007831A0B47620009B45C /* HamburberTableTableViewController.xib */; };
 		FABC008A19FF425400BDFE39 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FABC008819FF425400BDFE39 /* LoginViewController.m */; };
 		FABC008B19FF425400BDFE39 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABC008919FF425400BDFE39 /* LoginViewController.xib */; };
 		FABC008E19FF444A00BDFE39 /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FABC008D19FF444A00BDFE39 /* TwitterClient.m */; };
@@ -85,9 +83,6 @@
 		FAA0077C1A0B0C510009B45C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		FAA0077D1A0B0C510009B45C /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		FAA0077E1A0B0C510009B45C /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		FAA007811A0B47620009B45C /* HamburberTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HamburberTableTableViewController.h; path = ../HamburberTableTableViewController.h; sourceTree = "<group>"; };
-		FAA007821A0B47620009B45C /* HamburberTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HamburberTableTableViewController.m; path = ../HamburberTableTableViewController.m; sourceTree = "<group>"; };
-		FAA007831A0B47620009B45C /* HamburberTableTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HamburberTableTableViewController.xib; path = ../HamburberTableTableViewController.xib; sourceTree = "<group>"; };
 		FABC008719FF425400BDFE39 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FABC008819FF425400BDFE39 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FABC008919FF425400BDFE39 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -159,9 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				FA5AA5F41A068400007467C8 /* retweet_2.png */,
-				FAA007811A0B47620009B45C /* HamburberTableTableViewController.h */,
-				FAA007821A0B47620009B45C /* HamburberTableTableViewController.m */,
-				FAA007831A0B47620009B45C /* HamburberTableTableViewController.xib */,
 				FABDF7191A01421400E03211 /* models */,
 				FA0A18A619FF3F390040ABE9 /* AppDelegate.h */,
 				FA0A18A719FF3F390040ABE9 /* AppDelegate.m */,
@@ -325,7 +317,6 @@
 				FAA007801A0B0C510009B45C /* HomeViewController.xib in Resources */,
 				FA0A18B619FF3F390040ABE9 /* LaunchScreen.xib in Resources */,
 				FA0A18B319FF3F390040ABE9 /* Images.xcassets in Resources */,
-				FAA007851A0B47620009B45C /* HamburberTableTableViewController.xib in Resources */,
 				FA5AA5F51A068400007467C8 /* retweet_2.png in Resources */,
 				FA5AA5F71A06844D007467C8 /* reply_2.png in Resources */,
 				FA222B8F1A05E02500037537 /* favorite.png in Resources */,
@@ -385,7 +376,6 @@
 				FABC008A19FF425400BDFE39 /* LoginViewController.m in Sources */,
 				FABDF71F1A01424600E03211 /* User.m in Sources */,
 				FA0A18A819FF3F390040ABE9 /* AppDelegate.m in Sources */,
-				FAA007841A0B47620009B45C /* HamburberTableTableViewController.m in Sources */,
 				FABC008E19FF444A00BDFE39 /* TwitterClient.m in Sources */,
 				FA222B8A1A059EC000037537 /* HomeFeedViewCell.m in Sources */,
 				FA5AA5EE1A067CAE007467C8 /* TweetDetailsViewController.m in Sources */,
