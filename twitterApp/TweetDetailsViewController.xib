@@ -190,7 +190,7 @@
                     <exclude reference="wNv-ee-gsh"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="-218.5" y="133.5"/>
+            <point key="canvasLocation" x="-275.5" y="-158.5"/>
         </view>
         <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="reply.png" id="x56-ct-Coo">
             <rect key="frame" x="0.0" y="0.0" width="396" height="380"/>

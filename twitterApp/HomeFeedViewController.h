@@ -12,7 +12,7 @@
 
 @interface HomeFeedViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *feedTableView;
-
+@property (strong, nonatomic) IBOutlet UIView *backgroundView;
 @property (nonatomic, strong) NSArray* tweets;
 @property (nonatomic, strong) User* user;
 @property (nonatomic, strong) HomeFeedViewCell* prototypeCell;

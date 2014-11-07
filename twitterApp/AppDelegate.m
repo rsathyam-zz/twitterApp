@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
-#import "HomeFeedViewController.h"
+#import "HomeViewController.h"
 #import "TwitterClient.h"
 #import "User.h"
 
@@ -29,7 +29,7 @@
         self.window.rootViewController = [[LoginViewController alloc] init];
     } else {
         //If viewer is initialized go to the home feed view
-        HomeFeedViewController* hfvc = [[HomeFeedViewController alloc] init];
+        HomeViewController* hfvc = [[HomeViewController alloc] init];
         hfvc.user = user;
         UINavigationController* unc = [[UINavigationController alloc] initWithRootViewController:hfvc];
         self.window.rootViewController = unc;
