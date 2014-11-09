@@ -14,11 +14,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1P-d7-iRu">
-                        <rect key="frame" x="187" y="43.5" width="42" height="19"/>
+                        <rect key="frame" x="182" y="43" width="51.5" height="19"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="19" id="RWq-00-O90"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="21"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -28,6 +28,7 @@
                     <constraint firstAttribute="centerX" secondItem="y1P-d7-iRu" secondAttribute="centerX" id="ILI-4i-the"/>
                     <constraint firstItem="y1P-d7-iRu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="50" id="LTv-tM-kdn"/>
                     <constraint firstItem="y1P-d7-iRu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="50" id="jfU-rB-JCC"/>
+                    <constraint firstItem="y1P-d7-iRu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="o7b-Yh-BZu"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">

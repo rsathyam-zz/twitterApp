@@ -118,5 +118,15 @@ NSString* const kTwitterBaseUrl = @"https://api.twitter.com";
         completion(error);
     }];
 }
+- (void)getBannerURLWithParams:(NSDictionary *)params completion:(void(^)(NSString* bannerURL, NSError* error)) completion {
+    [self GET:@"1.1/users/profile_banner.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary* sizes = responseObject[@"sizes"];
+        NSDictionary* mobile_retina = sizes[@"mobile_retina"];
+        completion(mobile_retina[@"url"], nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@", error);
+        completion(nil, error);
+    }];
+}
 
 @end

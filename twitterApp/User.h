@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSString* tagLine;
 @property (nonatomic, strong) NSDictionary* userProperties;
 
+
 + (User *)getCurrentUser;
 + (void)setCurrentUser:(User *)user;
 

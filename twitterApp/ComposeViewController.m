@@ -22,7 +22,7 @@
     
     self.composeTextView.delegate = self;
     // Do any additional setup after loading the view from its nib.
-    NSURL* profilePictureURL = [NSURL URLWithString:[self.user.profileImageURL stringByReplacingOccurrencesOfString:@"_normal.jpeg" withString:@".jpeg"]];
+    NSURL* profilePictureURL = [NSURL URLWithString:[self.user.profileImageURL stringByReplacingOccurrencesOfString:@"_normal." withString:@"."]];
     NSURLRequest* profilePictureRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5];
     CGSize targetSize = self.profilePicView.bounds.size;
     

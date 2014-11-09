@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ProfileHeaderTableViewCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
 @end

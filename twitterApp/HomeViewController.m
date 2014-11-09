@@ -15,6 +15,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "LoginViewController.h"
 #import "HamburgerTableViewCell.h"
+#import "ProfileViewController.h"
 
 @interface HomeViewController ()
 @property UIRefreshControl *refreshControl;
@@ -252,7 +253,8 @@ static HomeFeedViewCell* _sizingCell = nil;
     } else {
         [self.hamburgerTableView deselectRowAtIndexPath:indexPath animated:YES];
         if (indexPath.row == 0) {
-            
+            ProfileViewController* pvc = [[ProfileViewController alloc] initWithUser:[User getCurrentUser]];
+            [self.navigationController pushViewController:pvc animated:YES];
         }
     }
 }
