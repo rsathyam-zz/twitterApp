@@ -19,4 +19,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *screennameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *numTweets;
+
+@property (weak, nonatomic) IBOutlet UILabel *numFollowers;
+
+@property (weak, nonatomic) IBOutlet UILabel *numFollowing;
+
+
 @end

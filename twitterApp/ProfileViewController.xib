@@ -8,6 +8,9 @@
             <connections>
                 <outlet property="bannerImageView" destination="V0z-Pg-e8i" id="uc0-S3-xSk"/>
                 <outlet property="nameLabel" destination="GPb-SL-viM" id="5sE-HG-4NX"/>
+                <outlet property="numFollowers" destination="9a1-Ot-8hN" id="mne-Fx-AaH"/>
+                <outlet property="numFollowing" destination="eid-2j-3vb" id="pBv-W9-HkT"/>
+                <outlet property="numTweets" destination="MY9-Xc-IRD" id="hci-a4-dOa"/>
                 <outlet property="profileImageView" destination="npc-NA-Z3w" id="AO7-DA-z6a"/>
                 <outlet property="screennameLabel" destination="Ees-yb-8l2" id="3gW-oY-6vU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -66,11 +69,71 @@
                         </mask>
                     </variation>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mm2-lM-Qsh">
+                    <rect key="frame" x="0.0" y="347" width="375" height="320"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweets:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gjj-7j-8GU">
+                            <rect key="frame" x="10" y="10" width="58.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P42-Ji-J4Z">
+                            <rect key="frame" x="10" y="50" width="78.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sah-n8-LXV">
+                            <rect key="frame" x="10" y="91" width="78.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NumTweets" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MY9-Xc-IRD">
+                            <rect key="frame" x="113" y="10" width="90" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NumFollowers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9a1-Ot-8hN">
+                            <rect key="frame" x="113" y="50" width="111" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NumFollowing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eid-2j-3vb">
+                            <rect key="frame" x="113" y="91" width="110" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="eid-2j-3vb" firstAttribute="leading" secondItem="MY9-Xc-IRD" secondAttribute="leading" id="1ev-2b-0Qm"/>
+                        <constraint firstItem="Gjj-7j-8GU" firstAttribute="leading" secondItem="sah-n8-LXV" secondAttribute="leading" id="67c-3T-XRV"/>
+                        <constraint firstItem="Gjj-7j-8GU" firstAttribute="leading" secondItem="P42-Ji-J4Z" secondAttribute="leading" id="Axe-0h-Sjd"/>
+                        <constraint firstItem="9a1-Ot-8hN" firstAttribute="top" secondItem="MY9-Xc-IRD" secondAttribute="bottom" constant="20" id="B0d-ty-mDX"/>
+                        <constraint firstItem="eid-2j-3vb" firstAttribute="leading" secondItem="9a1-Ot-8hN" secondAttribute="leading" id="F2Y-Ec-5dd"/>
+                        <constraint firstItem="eid-2j-3vb" firstAttribute="top" secondItem="9a1-Ot-8hN" secondAttribute="bottom" constant="20" id="JdI-Yi-Avi"/>
+                        <constraint firstAttribute="height" constant="320" id="Rlj-7k-Rga"/>
+                        <constraint firstItem="Gjj-7j-8GU" firstAttribute="top" secondItem="Mm2-lM-Qsh" secondAttribute="top" constant="10" id="mmn-mA-NCN"/>
+                        <constraint firstItem="Gjj-7j-8GU" firstAttribute="leading" secondItem="Mm2-lM-Qsh" secondAttribute="leading" constant="10" id="nPM-HE-XFe"/>
+                        <constraint firstItem="MY9-Xc-IRD" firstAttribute="leading" secondItem="Gjj-7j-8GU" secondAttribute="trailing" constant="45" id="pJh-hS-4ae"/>
+                        <constraint firstItem="P42-Ji-J4Z" firstAttribute="top" secondItem="Gjj-7j-8GU" secondAttribute="bottom" constant="20" id="pax-aP-SC5"/>
+                        <constraint firstAttribute="width" constant="375" id="tdT-l7-0dJ"/>
+                        <constraint firstItem="sah-n8-LXV" firstAttribute="top" secondItem="P42-Ji-J4Z" secondAttribute="bottom" constant="20" id="vNs-dc-3pQ"/>
+                        <constraint firstItem="MY9-Xc-IRD" firstAttribute="top" secondItem="Mm2-lM-Qsh" secondAttribute="top" constant="10" id="wTW-dK-K4N"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="V0z-Pg-e8i" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9rA-zw-0GA"/>
                 <constraint firstItem="V0z-Pg-e8i" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="m76-FF-1Am"/>
+                <constraint firstItem="Mm2-lM-Qsh" firstAttribute="top" secondItem="V0z-Pg-e8i" secondAttribute="bottom" constant="8" id="osQ-Vt-o6w"/>
+                <constraint firstItem="Mm2-lM-Qsh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ujI-sq-hr6"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="46.5" y="236.5"/>

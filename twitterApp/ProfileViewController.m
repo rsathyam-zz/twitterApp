@@ -59,6 +59,14 @@
     
     self.nameLabel.text = self.user.name;
     self.screennameLabel.text = [@"@" stringByAppendingString:self.user.screenName];
+    NSNumber* tweetCount = self.user.userProperties[@"statuses_count"];
+    self.numTweets.text = [tweetCount stringValue];
+    
+    NSNumber* followerCount = self.user.userProperties[@"followers_count"];
+    self.numFollowers.text = [followerCount stringValue];
+    
+    NSNumber* friendCount = self.user.userProperties[@"friends_count"];
+    self.numFollowing.text = [friendCount stringValue];
 }
 
 - (id)initWithUser:(User *)user {
