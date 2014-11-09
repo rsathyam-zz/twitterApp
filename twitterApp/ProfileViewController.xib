@@ -7,7 +7,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController">
             <connections>
                 <outlet property="bannerImageView" destination="V0z-Pg-e8i" id="uc0-S3-xSk"/>
+                <outlet property="nameLabel" destination="GPb-SL-viM" id="5sE-HG-4NX"/>
                 <outlet property="profileImageView" destination="npc-NA-Z3w" id="AO7-DA-z6a"/>
+                <outlet property="screennameLabel" destination="Ees-yb-8l2" id="3gW-oY-6vU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V0z-Pg-e8i" customClass="UIImageView">
-                    <rect key="frame" x="0.0" y="64" width="375" height="300"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="275"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="npc-NA-Z3w">
                             <rect key="frame" x="137" y="50" width="100" height="120"/>
@@ -26,13 +28,36 @@
                                 <constraint firstAttribute="width" constant="100" id="yrX-rz-3Mu"/>
                             </constraints>
                         </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="Screename" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ees-yb-8l2">
+                            <rect key="frame" x="0.0" y="244" width="375" height="20.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="375" id="nah-c2-pe2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPb-SL-viM">
+                            <rect key="frame" x="0.0" y="190" width="375" height="34.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="375" id="4W1-gH-Z3A"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="300" id="4Du-uk-Pff"/>
+                        <constraint firstItem="Ees-yb-8l2" firstAttribute="top" secondItem="GPb-SL-viM" secondAttribute="bottom" constant="20" id="0ev-yQ-0em"/>
+                        <constraint firstAttribute="height" constant="275" id="4Du-uk-Pff"/>
                         <constraint firstAttribute="centerY" secondItem="npc-NA-Z3w" secondAttribute="centerY" id="5W0-ql-bv2"/>
+                        <constraint firstAttribute="centerX" secondItem="Ees-yb-8l2" secondAttribute="centerX" id="8gw-2o-1hu"/>
+                        <constraint firstAttribute="bottom" secondItem="Ees-yb-8l2" secondAttribute="bottom" constant="10" id="C3l-Tj-c1z"/>
                         <constraint firstAttribute="width" constant="375" id="Neg-kE-Jhj"/>
+                        <constraint firstAttribute="centerX" secondItem="GPb-SL-viM" secondAttribute="centerX" id="YJw-9e-kqX"/>
                         <constraint firstAttribute="centerX" secondItem="npc-NA-Z3w" secondAttribute="centerX" id="mJV-Oh-aAC"/>
+                        <constraint firstItem="GPb-SL-viM" firstAttribute="top" secondItem="npc-NA-Z3w" secondAttribute="bottom" constant="20" id="vYc-MU-ETb"/>
                         <constraint firstItem="npc-NA-Z3w" firstAttribute="top" secondItem="V0z-Pg-e8i" secondAttribute="top" constant="50" id="yqd-x1-A1e"/>
                     </constraints>
                     <variation key="default">

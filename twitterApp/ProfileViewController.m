@@ -56,6 +56,9 @@
     } else {
         [self.profileImageView setImage:self.user.profilePic];
     }
+    
+    self.nameLabel.text = self.user.name;
+    self.screennameLabel.text = [@"@" stringByAppendingString:self.user.screenName];
 }
 
 - (id)initWithUser:(User *)user {
