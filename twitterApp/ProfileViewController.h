@@ -10,21 +10,11 @@
 #import "User.h"
 
 @interface ProfileViewController : UIViewController
-- (id)initWithUser:(User *)user;
-@property (weak, nonatomic) IBOutlet UIImageView *profileHeaderImageView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *bannerImageView;
 @property (strong, nonatomic) User* user;
-
-@property (weak, nonatomic) IBOutlet UIImageView *profilePhotoImageView;
-
-@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *userScreenNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *userName;
-
-@property (weak, nonatomic) IBOutlet UILabel *numTweetsLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *numFollowersLabel;
-@property (weak, nonatomic) IBOutlet UILabel *numFollowedByLabel;
+- (id)initWithUser:(User *)user;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 
 
 @end

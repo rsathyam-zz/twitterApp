@@ -28,14 +28,14 @@
 		FA5AA5F71A06844D007467C8 /* reply_2.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5AA5F61A06844D007467C8 /* reply_2.png */; };
 		FA5AA5FB1A069BA6007467C8 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5AA5F91A069BA6007467C8 /* ComposeViewController.m */; };
 		FA5AA5FC1A069BA6007467C8 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5AA5FA1A069BA6007467C8 /* ComposeViewController.xib */; };
+		FA8E256D1A0FFCA400F66ED5 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8E256B1A0FFCA400F66ED5 /* ProfileViewController.m */; };
+		FA8E256E1A0FFCA400F66ED5 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8E256C1A0FFCA400F66ED5 /* ProfileViewController.xib */; };
 		FAA0077F1A0B0C510009B45C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0077D1A0B0C510009B45C /* HomeViewController.m */; };
 		FAA007801A0B0C510009B45C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA0077E1A0B0C510009B45C /* HomeViewController.xib */; };
 		FAA007931A0F4BD00009B45C /* ProfileHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA007911A0F4BD00009B45C /* ProfileHeaderTableViewCell.m */; };
 		FAA007941A0F4BD00009B45C /* ProfileHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA007921A0F4BD00009B45C /* ProfileHeaderTableViewCell.xib */; };
 		FAA007981A0F4D700009B45C /* HamburgerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA007961A0F4D700009B45C /* HamburgerTableViewCell.m */; };
 		FAA007991A0F4D700009B45C /* HamburgerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA007971A0F4D700009B45C /* HamburgerTableViewCell.xib */; };
-		FAA0079D1A0F583A0009B45C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0079B1A0F583A0009B45C /* ProfileViewController.m */; };
-		FAA0079E1A0F583A0009B45C /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA0079C1A0F583A0009B45C /* ProfileViewController.xib */; };
 		FABC008A19FF425400BDFE39 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FABC008819FF425400BDFE39 /* LoginViewController.m */; };
 		FABC008B19FF425400BDFE39 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABC008919FF425400BDFE39 /* LoginViewController.xib */; };
 		FABC008E19FF444A00BDFE39 /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FABC008D19FF444A00BDFE39 /* TwitterClient.m */; };
@@ -86,6 +86,9 @@
 		FA5AA5F81A069BA6007467C8 /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		FA5AA5F91A069BA6007467C8 /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		FA5AA5FA1A069BA6007467C8 /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
+		FA8E256A1A0FFCA400F66ED5 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		FA8E256B1A0FFCA400F66ED5 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		FA8E256C1A0FFCA400F66ED5 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		FAA0077C1A0B0C510009B45C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		FAA0077D1A0B0C510009B45C /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		FAA0077E1A0B0C510009B45C /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -95,9 +98,6 @@
 		FAA007951A0F4D700009B45C /* HamburgerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HamburgerTableViewCell.h; sourceTree = "<group>"; };
 		FAA007961A0F4D700009B45C /* HamburgerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HamburgerTableViewCell.m; sourceTree = "<group>"; };
 		FAA007971A0F4D700009B45C /* HamburgerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HamburgerTableViewCell.xib; sourceTree = "<group>"; };
-		FAA0079A1A0F583A0009B45C /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		FAA0079B1A0F583A0009B45C /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		FAA0079C1A0F583A0009B45C /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		FABC008719FF425400BDFE39 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FABC008819FF425400BDFE39 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FABC008919FF425400BDFE39 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -207,9 +207,9 @@
 				FAA007951A0F4D700009B45C /* HamburgerTableViewCell.h */,
 				FAA007961A0F4D700009B45C /* HamburgerTableViewCell.m */,
 				FAA007971A0F4D700009B45C /* HamburgerTableViewCell.xib */,
-				FAA0079A1A0F583A0009B45C /* ProfileViewController.h */,
-				FAA0079B1A0F583A0009B45C /* ProfileViewController.m */,
-				FAA0079C1A0F583A0009B45C /* ProfileViewController.xib */,
+				FA8E256A1A0FFCA400F66ED5 /* ProfileViewController.h */,
+				FA8E256B1A0FFCA400F66ED5 /* ProfileViewController.m */,
+				FA8E256C1A0FFCA400F66ED5 /* ProfileViewController.xib */,
 			);
 			path = twitterApp;
 			sourceTree = "<group>";
@@ -348,7 +348,7 @@
 				FA222B8F1A05E02500037537 /* favorite.png in Resources */,
 				FABC008B19FF425400BDFE39 /* LoginViewController.xib in Resources */,
 				FA222B8D1A05DEAC00037537 /* retweet.png in Resources */,
-				FAA0079E1A0F583A0009B45C /* ProfileViewController.xib in Resources */,
+				FA8E256E1A0FFCA400F66ED5 /* ProfileViewController.xib in Resources */,
 				FA222B811A05830500037537 /* HomeFeedViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,7 +404,7 @@
 				FABDF71F1A01424600E03211 /* User.m in Sources */,
 				FAA007931A0F4BD00009B45C /* ProfileHeaderTableViewCell.m in Sources */,
 				FA0A18A819FF3F390040ABE9 /* AppDelegate.m in Sources */,
-				FAA0079D1A0F583A0009B45C /* ProfileViewController.m in Sources */,
+				FA8E256D1A0FFCA400F66ED5 /* ProfileViewController.m in Sources */,
 				FABC008E19FF444A00BDFE39 /* TwitterClient.m in Sources */,
 				FA222B8A1A059EC000037537 /* HomeFeedViewCell.m in Sources */,
 				FA5AA5EE1A067CAE007467C8 /* TweetDetailsViewController.m in Sources */,
