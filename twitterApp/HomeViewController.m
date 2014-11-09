@@ -149,7 +149,11 @@ static HomeFeedViewCell* _sizingCell = nil;
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 250.f;
+    if (tableView == self.feedTableView) {
+        return 250.f;
+    } else {
+        return 200.f;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
