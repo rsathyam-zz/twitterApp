@@ -2,55 +2,31 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ProfileViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SR6-Ar-pI1">
-                        <rect key="frame" x="10" y="30" width="120" height="140"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="120" id="qQj-uT-AMv"/>
-                            <constraint firstAttribute="width" secondItem="SR6-Ar-pI1" secondAttribute="height" multiplier="3:3.5" id="qb9-za-bp1"/>
-                            <constraint firstAttribute="height" constant="120" id="vkZ-uh-9ar"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="vkZ-uh-9ar"/>
-                            </mask>
-                        </variation>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@Screenname" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ev1-Ui-9wf">
-                        <rect key="frame" x="140" y="90" width="110" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Profile" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ev1-Ui-9wf">
+                        <rect key="frame" x="115.5" y="39" width="89.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="SR6-Ar-pI1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="4n6-te-jzg"/>
                     <constraint firstAttribute="centerY" secondItem="ev1-Ui-9wf" secondAttribute="centerY" id="DG2-2H-bGP"/>
-                    <constraint firstItem="SR6-Ar-pI1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="HHI-hW-cKB"/>
-                    <constraint firstItem="ev1-Ui-9wf" firstAttribute="leading" secondItem="SR6-Ar-pI1" secondAttribute="trailing" constant="10" id="Vgf-Q0-cd8"/>
-                    <constraint firstItem="SR6-Ar-pI1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" id="YFW-mA-FzP"/>
-                    <constraint firstAttribute="centerY" secondItem="SR6-Ar-pI1" secondAttribute="centerY" id="bqC-Km-orR"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SR6-Ar-pI1" secondAttribute="bottom" constant="10" id="pf5-bB-VgZ"/>
+                    <constraint firstAttribute="centerX" secondItem="ev1-Ui-9wf" secondAttribute="centerX" id="DbR-kE-yfQ"/>
+                    <constraint firstAttribute="centerY" secondItem="ev1-Ui-9wf" secondAttribute="centerY" id="T6S-1P-J3t"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="YFW-mA-FzP"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="profileImageView" destination="SR6-Ar-pI1" id="wqm-s2-OHC"/>
                 <outlet property="screennameLabel" destination="ev1-Ui-9wf" id="VJr-15-Afk"/>
             </connections>
             <point key="canvasLocation" x="-158" y="204"/>

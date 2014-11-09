@@ -30,7 +30,7 @@ static HomeFeedViewCell* _sizingCell = nil;
     self.feedTableView.dataSource = self;
     
     self.hamburgerTableView.delegate = self;
-    self.hamburgerTableView.dataSource = self;
+    self.hamburgerTableView.dataSource = self;    
     
     UIPanGestureRecognizer* hamburgerHider = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onHamburgerHide:)];
     [self.hamburgerView addGestureRecognizer:hamburgerHider];
@@ -157,7 +157,7 @@ static HomeFeedViewCell* _sizingCell = nil;
     if (tableView == self.feedTableView) {
         return self.tweets.count;
     }
-    return 1;
+    return 3;
 }
 
 - (NSString* )getTimeStringFromDelta:(NSInteger)delta {
@@ -227,27 +227,16 @@ static HomeFeedViewCell* _sizingCell = nil;
         }];
         return cell;
     } else {
+        ProfileViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProfileViewCell"];
+        
         if (indexPath.row == 0) {
-            ProfileViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProfileViewCell"];
-            NSURL* profilePictureURL = [NSURL URLWithString:[self.user.profileImageURL stringByReplacingOccurrencesOfString:@"_normal." withString:@"."]];
-            NSURLRequest* profilePictureRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5];
-            CGSize targetSize = cell.profileImageView.bounds.size;
-            cell.screennameLabel.text = [@"@" stringByAppendingString:self.user.screenName];
-            
-            
-            [cell.profileImageView setImageWithURLRequest:profilePictureRequest placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0.0);
-                [image drawInRect:CGRectMake(0,0, targetSize.width, targetSize.height)];
-                UIImage* resized = UIGraphicsGetImageFromCurrentImageContext();
-                UIGraphicsEndImageContext();
-                [cell.profileImageView setImage:resized];
-            } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-                //TODO UIAlertView
-                NSLog(@"%@", error);
-            }];
-            return cell;
+            cell.screennameLabel.text = @"View Profile";
+        } else if (indexPath.row == 1) {
+            cell.screennameLabel.text = @"View Timeline";
+        } else {
+            cell.screennameLabel.text = @"View Mentions";
         }
-        return nil;
+        return cell;
     }
 }
 
