@@ -30,8 +30,12 @@
 		FA5AA5FC1A069BA6007467C8 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5AA5FA1A069BA6007467C8 /* ComposeViewController.xib */; };
 		FAA0077F1A0B0C510009B45C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0077D1A0B0C510009B45C /* HomeViewController.m */; };
 		FAA007801A0B0C510009B45C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA0077E1A0B0C510009B45C /* HomeViewController.xib */; };
-		FAA007891A0CA6E20009B45C /* ProfileViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA007871A0CA6E20009B45C /* ProfileViewCell.m */; };
-		FAA0078A1A0CA6E20009B45C /* ProfileViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA007881A0CA6E20009B45C /* ProfileViewCell.xib */; };
+		FAA0078E1A0F49F90009B45C /* ProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0078C1A0F49F90009B45C /* ProfileTableViewController.m */; };
+		FAA0078F1A0F49F90009B45C /* ProfileTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA0078D1A0F49F90009B45C /* ProfileTableViewController.xib */; };
+		FAA007931A0F4BD00009B45C /* ProfileHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA007911A0F4BD00009B45C /* ProfileHeaderTableViewCell.m */; };
+		FAA007941A0F4BD00009B45C /* ProfileHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA007921A0F4BD00009B45C /* ProfileHeaderTableViewCell.xib */; };
+		FAA007981A0F4D700009B45C /* HamburgerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA007961A0F4D700009B45C /* HamburgerTableViewCell.m */; };
+		FAA007991A0F4D700009B45C /* HamburgerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA007971A0F4D700009B45C /* HamburgerTableViewCell.xib */; };
 		FABC008A19FF425400BDFE39 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FABC008819FF425400BDFE39 /* LoginViewController.m */; };
 		FABC008B19FF425400BDFE39 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABC008919FF425400BDFE39 /* LoginViewController.xib */; };
 		FABC008E19FF444A00BDFE39 /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FABC008D19FF444A00BDFE39 /* TwitterClient.m */; };
@@ -85,9 +89,15 @@
 		FAA0077C1A0B0C510009B45C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		FAA0077D1A0B0C510009B45C /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		FAA0077E1A0B0C510009B45C /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		FAA007861A0CA6E20009B45C /* ProfileViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewCell.h; sourceTree = "<group>"; };
-		FAA007871A0CA6E20009B45C /* ProfileViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewCell.m; sourceTree = "<group>"; };
-		FAA007881A0CA6E20009B45C /* ProfileViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewCell.xib; sourceTree = "<group>"; };
+		FAA0078B1A0F49F90009B45C /* ProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewController.h; sourceTree = "<group>"; };
+		FAA0078C1A0F49F90009B45C /* ProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewController.m; sourceTree = "<group>"; };
+		FAA0078D1A0F49F90009B45C /* ProfileTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTableViewController.xib; sourceTree = "<group>"; };
+		FAA007901A0F4BD00009B45C /* ProfileHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileHeaderTableViewCell.h; sourceTree = "<group>"; };
+		FAA007911A0F4BD00009B45C /* ProfileHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileHeaderTableViewCell.m; sourceTree = "<group>"; };
+		FAA007921A0F4BD00009B45C /* ProfileHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		FAA007951A0F4D700009B45C /* HamburgerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HamburgerTableViewCell.h; sourceTree = "<group>"; };
+		FAA007961A0F4D700009B45C /* HamburgerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HamburgerTableViewCell.m; sourceTree = "<group>"; };
+		FAA007971A0F4D700009B45C /* HamburgerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HamburgerTableViewCell.xib; sourceTree = "<group>"; };
 		FABC008719FF425400BDFE39 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FABC008819FF425400BDFE39 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FABC008919FF425400BDFE39 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -138,6 +148,9 @@
 		FA0A189619FF3F390040ABE9 = {
 			isa = PBXGroup;
 			children = (
+				FAA007901A0F4BD00009B45C /* ProfileHeaderTableViewCell.h */,
+				FAA007911A0F4BD00009B45C /* ProfileHeaderTableViewCell.m */,
+				FAA007921A0F4BD00009B45C /* ProfileHeaderTableViewCell.xib */,
 				FA0A18A119FF3F390040ABE9 /* twitterApp */,
 				FA0A18BE19FF3F390040ABE9 /* twitterAppTests */,
 				FA0A18A019FF3F390040ABE9 /* Products */,
@@ -191,9 +204,12 @@
 				FAA0077C1A0B0C510009B45C /* HomeViewController.h */,
 				FAA0077D1A0B0C510009B45C /* HomeViewController.m */,
 				FAA0077E1A0B0C510009B45C /* HomeViewController.xib */,
-				FAA007861A0CA6E20009B45C /* ProfileViewCell.h */,
-				FAA007871A0CA6E20009B45C /* ProfileViewCell.m */,
-				FAA007881A0CA6E20009B45C /* ProfileViewCell.xib */,
+				FAA0078B1A0F49F90009B45C /* ProfileTableViewController.h */,
+				FAA0078C1A0F49F90009B45C /* ProfileTableViewController.m */,
+				FAA0078D1A0F49F90009B45C /* ProfileTableViewController.xib */,
+				FAA007951A0F4D700009B45C /* HamburgerTableViewCell.h */,
+				FAA007961A0F4D700009B45C /* HamburgerTableViewCell.m */,
+				FAA007971A0F4D700009B45C /* HamburgerTableViewCell.xib */,
 			);
 			path = twitterApp;
 			sourceTree = "<group>";
@@ -322,16 +338,18 @@
 				FA222B8B1A059EC000037537 /* HomeFeedViewCell.xib in Resources */,
 				FA5AA5F11A068340007467C8 /* favtwo.png in Resources */,
 				FA5AA5EF1A067CAE007467C8 /* TweetDetailsViewController.xib in Resources */,
+				FAA007991A0F4D700009B45C /* HamburgerTableViewCell.xib in Resources */,
 				FAA007801A0B0C510009B45C /* HomeViewController.xib in Resources */,
 				FA0A18B619FF3F390040ABE9 /* LaunchScreen.xib in Resources */,
+				FAA0078F1A0F49F90009B45C /* ProfileTableViewController.xib in Resources */,
 				FA0A18B319FF3F390040ABE9 /* Images.xcassets in Resources */,
+				FAA007941A0F4BD00009B45C /* ProfileHeaderTableViewCell.xib in Resources */,
 				FA5AA5F51A068400007467C8 /* retweet_2.png in Resources */,
 				FA5AA5F71A06844D007467C8 /* reply_2.png in Resources */,
 				FA222B8F1A05E02500037537 /* favorite.png in Resources */,
 				FABC008B19FF425400BDFE39 /* LoginViewController.xib in Resources */,
 				FA222B8D1A05DEAC00037537 /* retweet.png in Resources */,
 				FA222B811A05830500037537 /* HomeFeedViewController.xib in Resources */,
-				FAA0078A1A0CA6E20009B45C /* ProfileViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,12 +402,14 @@
 			files = (
 				FABC008A19FF425400BDFE39 /* LoginViewController.m in Sources */,
 				FABDF71F1A01424600E03211 /* User.m in Sources */,
-				FAA007891A0CA6E20009B45C /* ProfileViewCell.m in Sources */,
+				FAA0078E1A0F49F90009B45C /* ProfileTableViewController.m in Sources */,
+				FAA007931A0F4BD00009B45C /* ProfileHeaderTableViewCell.m in Sources */,
 				FA0A18A819FF3F390040ABE9 /* AppDelegate.m in Sources */,
 				FABC008E19FF444A00BDFE39 /* TwitterClient.m in Sources */,
 				FA222B8A1A059EC000037537 /* HomeFeedViewCell.m in Sources */,
 				FA5AA5EE1A067CAE007467C8 /* TweetDetailsViewController.m in Sources */,
 				FABDF71C1A01423B00E03211 /* Tweet.m in Sources */,
+				FAA007981A0F4D700009B45C /* HamburgerTableViewCell.m in Sources */,
 				FA0A18AB19FF3F390040ABE9 /* twitterApp.xcdatamodeld in Sources */,
 				FA5AA5FB1A069BA6007467C8 /* ComposeViewController.m in Sources */,
 				FA0A18A519FF3F390040ABE9 /* main.m in Sources */,

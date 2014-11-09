@@ -1,14 +1,14 @@
 //
-//  ProfileViewCell.m
+//  ProfileHeaderTableViewCell.m
 //  twitterApp
 //
-//  Created by Ravi Sathyam on 11/6/14.
+//  Created by Ravi Sathyam on 11/8/14.
 //  Copyright (c) 2014 SambarLabs. All rights reserved.
 //
 
-#import "ProfileViewCell.h"
+#import "ProfileHeaderTableViewCell.h"
 
-@implementation ProfileViewCell
+@implementation ProfileHeaderTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code

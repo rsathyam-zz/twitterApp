@@ -14,7 +14,7 @@
 #import "ComposeViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "LoginViewController.h"
-#import "ProfileViewCell.h"
+#import "HamburgerTableViewCell.h"
 
 @interface HomeViewController ()
 @property UIRefreshControl *refreshControl;
@@ -42,7 +42,7 @@ static HomeFeedViewCell* _sizingCell = nil;
     
     [self.feedTableView registerNib:[UINib nibWithNibName:@"HomeFeedViewCell" bundle:nil] forCellReuseIdentifier:@"HomeFeedViewCell"];
     
-    [self.hamburgerTableView registerNib:[UINib nibWithNibName:@"ProfileViewCell" bundle:nil] forCellReuseIdentifier:@"ProfileViewCell"];
+    [self.hamburgerTableView registerNib:[UINib nibWithNibName:@"HamburgerTableViewCell" bundle:nil] forCellReuseIdentifier:@"HamburgerTableViewCell"];
     
     self.navigationItem.title = @"Home";
     
@@ -231,23 +231,30 @@ static HomeFeedViewCell* _sizingCell = nil;
         }];
         return cell;
     } else {
-        ProfileViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProfileViewCell"];
+        HamburgerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HamburgerTableViewCell"];
         
         if (indexPath.row == 0) {
-            cell.screennameLabel.text = @"View Profile";
+            cell.cellTitleLabel.text = @"View Profile";
         } else if (indexPath.row == 1) {
-            cell.screennameLabel.text = @"View Timeline";
-        } else {
-            cell.screennameLabel.text = @"View Mentions";
+            cell.cellTitleLabel.text = @"View Timeline";
+        } else if (indexPath.row == 2){
+            cell.cellTitleLabel.text = @"View Mentions";
         }
         return cell;
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.feedTableView deselectRowAtIndexPath:indexPath animated:YES];
-    TweetDetailsViewController* tdvc = [[TweetDetailsViewController alloc] initWithTweet:self.tweets[indexPath.row]];
-    [self.navigationController pushViewController:tdvc animated:YES];
+    if (tableView == self.feedTableView) {
+        [self.feedTableView deselectRowAtIndexPath:indexPath animated:YES];
+        TweetDetailsViewController* tdvc = [[TweetDetailsViewController alloc] initWithTweet:self.tweets[indexPath.row]];
+        [self.navigationController pushViewController:tdvc animated:YES];
+    } else {
+        [self.hamburgerTableView deselectRowAtIndexPath:indexPath animated:YES];
+        if (indexPath.row == 0) {
+            
+        }
+    }
 }
 
 
