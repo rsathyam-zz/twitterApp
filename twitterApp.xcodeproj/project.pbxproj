@@ -30,6 +30,8 @@
 		FA5AA5FC1A069BA6007467C8 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5AA5FA1A069BA6007467C8 /* ComposeViewController.xib */; };
 		FAA0077F1A0B0C510009B45C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0077D1A0B0C510009B45C /* HomeViewController.m */; };
 		FAA007801A0B0C510009B45C /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA0077E1A0B0C510009B45C /* HomeViewController.xib */; };
+		FAA007891A0CA6E20009B45C /* ProfileViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA007871A0CA6E20009B45C /* ProfileViewCell.m */; };
+		FAA0078A1A0CA6E20009B45C /* ProfileViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA007881A0CA6E20009B45C /* ProfileViewCell.xib */; };
 		FABC008A19FF425400BDFE39 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FABC008819FF425400BDFE39 /* LoginViewController.m */; };
 		FABC008B19FF425400BDFE39 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABC008919FF425400BDFE39 /* LoginViewController.xib */; };
 		FABC008E19FF444A00BDFE39 /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = FABC008D19FF444A00BDFE39 /* TwitterClient.m */; };
@@ -83,6 +85,9 @@
 		FAA0077C1A0B0C510009B45C /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		FAA0077D1A0B0C510009B45C /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		FAA0077E1A0B0C510009B45C /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		FAA007861A0CA6E20009B45C /* ProfileViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewCell.h; sourceTree = "<group>"; };
+		FAA007871A0CA6E20009B45C /* ProfileViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewCell.m; sourceTree = "<group>"; };
+		FAA007881A0CA6E20009B45C /* ProfileViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewCell.xib; sourceTree = "<group>"; };
 		FABC008719FF425400BDFE39 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FABC008819FF425400BDFE39 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		FABC008919FF425400BDFE39 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -186,6 +191,9 @@
 				FAA0077C1A0B0C510009B45C /* HomeViewController.h */,
 				FAA0077D1A0B0C510009B45C /* HomeViewController.m */,
 				FAA0077E1A0B0C510009B45C /* HomeViewController.xib */,
+				FAA007861A0CA6E20009B45C /* ProfileViewCell.h */,
+				FAA007871A0CA6E20009B45C /* ProfileViewCell.m */,
+				FAA007881A0CA6E20009B45C /* ProfileViewCell.xib */,
 			);
 			path = twitterApp;
 			sourceTree = "<group>";
@@ -323,6 +331,7 @@
 				FABC008B19FF425400BDFE39 /* LoginViewController.xib in Resources */,
 				FA222B8D1A05DEAC00037537 /* retweet.png in Resources */,
 				FA222B811A05830500037537 /* HomeFeedViewController.xib in Resources */,
+				FAA0078A1A0CA6E20009B45C /* ProfileViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +384,7 @@
 			files = (
 				FABC008A19FF425400BDFE39 /* LoginViewController.m in Sources */,
 				FABDF71F1A01424600E03211 /* User.m in Sources */,
+				FAA007891A0CA6E20009B45C /* ProfileViewCell.m in Sources */,
 				FA0A18A819FF3F390040ABE9 /* AppDelegate.m in Sources */,
 				FABC008E19FF444A00BDFE39 /* TwitterClient.m in Sources */,
 				FA222B8A1A059EC000037537 /* HomeFeedViewCell.m in Sources */,

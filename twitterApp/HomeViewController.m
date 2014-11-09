@@ -14,6 +14,7 @@
 #import "ComposeViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "LoginViewController.h"
+#import "ProfileViewCell.h"
 
 @interface HomeViewController ()
 @property UIRefreshControl *refreshControl;
@@ -40,6 +41,8 @@ static HomeFeedViewCell* _sizingCell = nil;
     [self.refreshControl addTarget:self action:@selector(onRefresh) forControlEvents:UIControlEventValueChanged];
     
     [self.feedTableView registerNib:[UINib nibWithNibName:@"HomeFeedViewCell" bundle:nil] forCellReuseIdentifier:@"HomeFeedViewCell"];
+    
+    [self.hamburgerTableView registerNib:[UINib nibWithNibName:@"ProfileViewCell" bundle:nil] forCellReuseIdentifier:@"ProfileViewCell"];
     
     self.navigationItem.title = @"Home";
     
@@ -151,11 +154,10 @@ static HomeFeedViewCell* _sizingCell = nil;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    //return self.tweets.count;
     if (tableView == self.feedTableView) {
         return self.tweets.count;
     }
-    return 0;
+    return 1;
 }
 
 - (NSString* )getTimeStringFromDelta:(NSInteger)delta {
@@ -180,52 +182,73 @@ static HomeFeedViewCell* _sizingCell = nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HomeFeedViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedViewCell"];
+    if (tableView == self.feedTableView) {
+        HomeFeedViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedViewCell"];
     
-    Tweet* tweet = self.tweets[indexPath.row];
-    cell.tweetTextLabel.text = tweet.text;
-    [cell.tweetTextLabel setFont:[UIFont fontWithName:@"Arial" size:13]];
+        Tweet* tweet = self.tweets[indexPath.row];
+        cell.tweetTextLabel.text = tweet.text;
+        [cell.tweetTextLabel setFont:[UIFont fontWithName:@"Arial" size:13]];
     
-    cell.tweetUsernameLabel.text = [@"@" stringByAppendingString:tweet.creator.screenName];
-    [cell.tweetUsernameLabel setFont:[UIFont fontWithName:@"Arial" size:13]];
-    cell.tweetNameLabel.text = tweet.creator.name;
-    NSDate *date = tweet.createdAt;
-    NSInteger delta = [date timeIntervalSinceNow];
-    cell.tweetTimeLabel.text = [self getTimeStringFromDelta:delta];
-    [cell.tweetNameLabel setFont:[UIFont fontWithName:@"Arial-BoldMT" size:13]];
-    [cell.tweetTimeLabel setFont:[UIFont fontWithName:@"Arial" size:13]];
+        cell.tweetUsernameLabel.text = [@"@" stringByAppendingString:tweet.creator.screenName];
+        [cell.tweetUsernameLabel setFont:[UIFont fontWithName:@"Arial" size:13]];
+        cell.tweetNameLabel.text = tweet.creator.name;
+        NSDate *date = tweet.createdAt;
+        NSInteger delta = [date timeIntervalSinceNow];
+        cell.tweetTimeLabel.text = [self getTimeStringFromDelta:delta];
+        [cell.tweetNameLabel setFont:[UIFont fontWithName:@"Arial-BoldMT" size:13]];
+        [cell.tweetTimeLabel setFont:[UIFont fontWithName:@"Arial" size:13]];
     
-    cell.navController = self.navigationController;
-    cell.tweet = tweet;
+        cell.navController = self.navigationController;
+        cell.tweet = tweet;
     
-    if (tweet.isFavorited) {
-        cell.favoriteButton.tintColor = [UIColor darkGrayColor];
+        if (tweet.isFavorited) {
+            cell.favoriteButton.tintColor = [UIColor darkGrayColor];
+        }
+    
+        if (tweet.isRetweeted) {
+            cell.retweetButton.tintColor = [UIColor darkGrayColor];
+        }
+    
+        NSURL* profilePictureURL = [NSURL URLWithString:[tweet.creator.profileImageURL stringByReplacingOccurrencesOfString:@"_normal." withString:@"."]];
+        NSURLRequest* profilePictureRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5];
+        CGSize targetSize = cell.tweetProfilePictureLabel.bounds.size;
+    
+        [cell.tweetProfilePictureLabel setImageWithURLRequest:profilePictureRequest placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+            UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0.0);
+            [image drawInRect:CGRectMake(0,0, targetSize.width, targetSize.height)];
+            UIImage* resized = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            [cell.tweetProfilePictureLabel setImage:resized];
+            tweet.profilePic = resized;
+            tweet.creator.profilePic = resized;
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+            //TODO UIAlertView
+            NSLog(@"%@", error);
+        }];
+        return cell;
+    } else {
+        if (indexPath.row == 0) {
+            ProfileViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProfileViewCell"];
+            NSURL* profilePictureURL = [NSURL URLWithString:[self.user.profileImageURL stringByReplacingOccurrencesOfString:@"_normal." withString:@"."]];
+            NSURLRequest* profilePictureRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5];
+            CGSize targetSize = cell.profileImageView.bounds.size;
+            cell.screennameLabel.text = [@"@" stringByAppendingString:self.user.screenName];
+            
+            
+            [cell.profileImageView setImageWithURLRequest:profilePictureRequest placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0.0);
+                [image drawInRect:CGRectMake(0,0, targetSize.width, targetSize.height)];
+                UIImage* resized = UIGraphicsGetImageFromCurrentImageContext();
+                UIGraphicsEndImageContext();
+                [cell.profileImageView setImage:resized];
+            } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+                //TODO UIAlertView
+                NSLog(@"%@", error);
+            }];
+            return cell;
+        }
+        return nil;
     }
-    
-    if (tweet.isRetweeted) {
-        cell.retweetButton.tintColor = [UIColor darkGrayColor];
-    }
-    
-    NSURL* profilePictureURL = [NSURL URLWithString:[tweet.creator.profileImageURL stringByReplacingOccurrencesOfString:@"_normal." withString:@"."]];
-    NSURLRequest* profilePictureRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5];
-    CGSize targetSize = cell.tweetProfilePictureLabel.bounds.size;
-    
-    [cell.tweetProfilePictureLabel setImageWithURLRequest:profilePictureRequest placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-        UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0.0);
-        [image drawInRect:CGRectMake(0,0, targetSize.width, targetSize.height)];
-        UIImage* resized = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        [cell.tweetProfilePictureLabel setImage:resized];
-        tweet.profilePic = resized;
-        tweet.creator.profilePic = resized;
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-        //TODO UIAlertView
-        NSLog(@"%@", error);
-    }];
-    
-    // Configure the cell...
-    
-    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

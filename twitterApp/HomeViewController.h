@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "User.h"
 #import "HomeFeedViewCell.h"
-#import "HomeFeedViewController.h"
-#import "HamburberTableTableViewController.h"
 
 @interface HomeViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *feedView;
