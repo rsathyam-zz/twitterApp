@@ -16,6 +16,7 @@
 #import "LoginViewController.h"
 #import "HamburgerTableViewCell.h"
 #import "ProfileViewController.h"
+#import "MentionsTableViewController.h"
 
 @interface HomeViewController ()
 @property UIRefreshControl *refreshControl;
@@ -255,6 +256,15 @@ static HomeFeedViewCell* _sizingCell = nil;
         if (indexPath.row == 0) {
             ProfileViewController* pvc = [[ProfileViewController alloc] initWithUser:[User getCurrentUser]];
             [self.navigationController pushViewController:pvc animated:YES];
+        } else if (indexPath.row == 1) {
+            [UIView animateWithDuration:0.4 animations:^{
+                CGRect frame = self.feedView.frame;
+                frame.origin.x = 0;
+                self.feedView.frame = frame;
+            }];
+        } else if (indexPath.row == 2) {
+            MentionsTableViewController* mtvc = [[MentionsTableViewController alloc] init];
+            [self.navigationController pushViewController:mtvc animated:YES];
         }
     }
 }

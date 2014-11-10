@@ -20,6 +20,7 @@
 - (void)unretweetTweet:(NSInteger)tweet_id completion:(void(^)(NSError* error)) completion;
 - (void)favoriteMessageWithParams:(NSDictionary *)params completion:(void (^)(NSError* error))completion;
 - (void)unfavoriteMessageWithParams:(NSDictionary *)params completion:(void(^)(NSError* error)) completion;
+- (void)mentionsTimelineWithParams:(NSDictionary *)params completion:(void (^)(NSArray* tweets, NSError* error))completion;
 - (void)getBannerURLWithParams:(NSDictionary *)params completion:(void(^)(NSString* bannerURL, NSError* error)) completion;
 @property (nonatomic, strong) void (^loginCompletion)(User* user, NSError* error);
 @end
