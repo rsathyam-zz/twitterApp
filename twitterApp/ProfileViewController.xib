@@ -32,21 +32,21 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="Screename" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ees-yb-8l2">
-                            <rect key="frame" x="0.0" y="244" width="375" height="20.5"/>
+                            <rect key="frame" x="0.0" y="246" width="375" height="19"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="375" id="nah-c2-pe2"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                            <color key="textColor" white="0.68439210770000003" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPb-SL-viM">
-                            <rect key="frame" x="0.0" y="190" width="375" height="34.5"/>
+                            <rect key="frame" x="0.0" y="190" width="375" height="36"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="375" id="4W1-gH-Z3A"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -103,7 +103,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NumFollowing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eid-2j-3vb">
-                            <rect key="frame" x="113" y="90.5" width="110" height="20.5"/>
+                            <rect key="frame" x="113" y="90" width="110" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -136,7 +136,7 @@
                 <constraint firstItem="Mm2-lM-Qsh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ujI-sq-hr6"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="46.5" y="236.5"/>
+            <point key="canvasLocation" x="-231.5" y="149.5"/>
         </view>
     </objects>
 </document>

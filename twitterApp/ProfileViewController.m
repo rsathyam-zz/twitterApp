@@ -19,12 +19,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.navigationItem.title = @"Profile";
     NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:self.user.screenName,@"screen_name", nil];
     
     [[TwitterClient sharedInstance] getBannerURLWithParams:params completion:^(NSString *bannerURL, NSError *error) {
         if(error == nil) {
             NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:bannerURL]];
-            self.bannerImageView.image = [UIImage imageWithData:imageData];
+            UIImage* image = [UIImage imageWithData:imageData];
+            CGSize targetSize = self.bannerImageView.bounds.size;
+            UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0.0);
+            [image drawInRect:CGRectMake(0, 0, targetSize.width, targetSize.height)];
+            UIImage* resized = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            [self.bannerImageView setImage:resized];
         }
     }];
     

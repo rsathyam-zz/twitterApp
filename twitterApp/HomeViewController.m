@@ -113,6 +113,7 @@ static HomeFeedViewCell* _sizingCell = nil;
             CGRect frame = self.feedView.frame;
             frame.origin.x = 0;
             self.feedView.frame = frame;
+            self.navigationItem.title = @"Home";
         }];
     }
 }
@@ -125,6 +126,7 @@ static HomeFeedViewCell* _sizingCell = nil;
             CGRect frame = self.feedView.frame;
             frame.origin.x = -frame.size.width;
             self.feedView.frame = frame;
+            self.navigationItem.title = @"Menu";
         }];
     }
 }
