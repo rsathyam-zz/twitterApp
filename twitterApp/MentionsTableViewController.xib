@@ -36,6 +36,11 @@
                 <constraint firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="v5a-xo-yH5"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="v5a-xo-yH5"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

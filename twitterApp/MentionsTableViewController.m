@@ -126,6 +126,10 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 250.f;
+}
 
 /*
 // Override to support conditional editing of the table view.
