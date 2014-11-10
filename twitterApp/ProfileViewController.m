@@ -23,19 +23,8 @@
     
     [[TwitterClient sharedInstance] getBannerURLWithParams:params completion:^(NSString *bannerURL, NSError *error) {
         if(error == nil) {
-            NSURL* url = [NSURL URLWithString:@"https://pbs.twimg.com/profile_banners/6253282/1347394302/mobile_retina"];
-            CGSize targetSize = self.bannerImageView.bounds.size;
-            NSURLRequest* bannerURLRequest = [NSURLRequest requestWithURL:url];
-            [self.bannerImageView setImageWithURLRequest:bannerURLRequest placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0.0);
-                [image drawInRect:CGRectMake(0,0, targetSize.width, targetSize.height)];
-                UIImage* resized = UIGraphicsGetImageFromCurrentImageContext();
-                UIGraphicsEndImageContext();
-                [self.bannerImageView setImage:resized];
-            } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-                //TODO UIAlertView
-                NSLog(@"%@", error);
-            }];
+            NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:bannerURL]];
+            self.bannerImageView.image = [UIImage imageWithData:imageData];
         }
     }];
     

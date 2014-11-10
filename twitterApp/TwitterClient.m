@@ -124,7 +124,7 @@ NSString* const kTwitterBaseUrl = @"https://api.twitter.com";
         NSDictionary* mobile_retina = sizes[@"mobile_retina"];
         completion(mobile_retina[@"url"], nil);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"%@", error);
+        NSLog(@"Error fetching the bannerURL with params: %@", error);
         completion(nil, error);
     }];
 }
