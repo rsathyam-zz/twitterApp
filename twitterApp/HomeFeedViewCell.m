@@ -8,6 +8,7 @@
 
 #import "HomeFeedViewCell.h"
 #import "ComposeViewController.h"
+#import "ProfileViewController.h"
 #import "TwitterClient.h"
 
 @implementation HomeFeedViewCell
@@ -77,5 +78,7 @@
     }
 }
 - (IBAction)onImageButtonClicked:(id)sender {
+    ProfileViewController* pvc = [[ProfileViewController alloc] initWithUser:self.tweet.creator];
+    [self.navController pushViewController:pvc animated:YES];
 }
 @end

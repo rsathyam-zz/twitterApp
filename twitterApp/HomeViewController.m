@@ -215,21 +215,21 @@ static HomeFeedViewCell* _sizingCell = nil;
         }
     
         NSURL* profilePictureURL = [NSURL URLWithString:[tweet.creator.profileImageURL stringByReplacingOccurrencesOfString:@"_normal." withString:@"."]];
-        NSURLRequest* profilePictureRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5];
-        CGSize targetSize = cell.imageButton.bounds.size;
         
-        if (tweet.creator.profilePic == nil) {
-            NSData *imageData = [NSData dataWithContentsOfURL:profilePictureURL];
-            UIImage* image = [[UIImage alloc] initWithData:imageData];
-            if (image) {
-                tweet.creator.profilePic = image;
-                [cell.imageButton setBackgroundImage:image forState:UIControlStateNormal];
-            }
-        } else {
-            [cell.imageButton setBackgroundImage:tweet.creator.profilePic forState:UIControlStateNormal];
-        }
-    
-
+        
+        // Fetch using GCD
+        dispatch_queue_t downloadQueue = dispatch_queue_create("Get Button Photo", NULL);
+        dispatch_async(downloadQueue, ^{
+            NSData* imageData = [NSData dataWithContentsOfURL:profilePictureURL];
+            UIImage *image = [[UIImage alloc ] initWithData:imageData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                HomeFeedViewCell *cellToUpdate = (HomeFeedViewCell *)[self.feedTableView cellForRowAtIndexPath:indexPath];
+                if (cellToUpdate != nil) {
+                    [cellToUpdate.imageButton setBackgroundImage:image forState:UIControlStateNormal];
+                    [cellToUpdate setNeedsLayout];
+                }
+            });
+        });
         return cell;
     } else {
         HamburgerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HamburgerTableViewCell"];

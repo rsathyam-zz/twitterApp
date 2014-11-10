@@ -25,10 +25,10 @@
                     <rect key="frame" x="0.0" y="64" width="375" height="275"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="npc-NA-Z3w">
-                            <rect key="frame" x="137" y="50" width="100" height="120"/>
+                            <rect key="frame" x="127" y="50" width="120" height="120"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="120" id="Jkt-oe-o5u"/>
-                                <constraint firstAttribute="width" constant="100" id="yrX-rz-3Mu"/>
+                                <constraint firstAttribute="width" constant="120" id="yrX-rz-3Mu"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="Screename" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ees-yb-8l2">
@@ -97,13 +97,13 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NumFollowers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9a1-Ot-8hN">
-                            <rect key="frame" x="113" y="50" width="111" height="21"/>
+                            <rect key="frame" x="113" y="50" width="110.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NumFollowing" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eid-2j-3vb">
-                            <rect key="frame" x="113" y="91" width="110" height="21"/>
+                            <rect key="frame" x="113" y="90.5" width="110" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
