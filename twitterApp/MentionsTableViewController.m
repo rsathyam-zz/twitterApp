@@ -9,6 +9,7 @@
 #import "MentionsTableViewController.h"
 #import "TwitterClient.h"
 #import "HomeFeedViewCell.h"
+#import "TweetDetailsViewController.h"
 
 @interface MentionsTableViewController ()
 
@@ -21,6 +22,10 @@
     
     self.mentionsTableView.delegate = self;
     self.mentionsTableView.dataSource = self;
+    
+    self.navigationItem.title = @"Mentions";
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Home" style:UIBarButtonItemStylePlain target:self action:@selector(onHomeButton)];
     
     [self.mentionsTableView registerNib:[UINib nibWithNibName:@"HomeFeedViewCell" bundle:nil] forCellReuseIdentifier:@"HomeFeedViewCell"];
     
@@ -40,6 +45,10 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)onHomeButton {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -130,6 +139,13 @@
 {
     return 250.f;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.mentionsTableView deselectRowAtIndexPath:indexPath animated:YES];
+    TweetDetailsViewController* tdvc = [[TweetDetailsViewController alloc] initWithTweet:self.tweets[indexPath.row]];
+    [self.navigationController pushViewController:tdvc animated:YES];
+}
+
 
 /*
 // Override to support conditional editing of the table view.

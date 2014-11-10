@@ -263,6 +263,7 @@ static HomeFeedViewCell* _sizingCell = nil;
                 CGRect frame = self.feedView.frame;
                 frame.origin.x = 0;
                 self.feedView.frame = frame;
+                self.navigationItem.title = @"Home";
             }];
         } else if (indexPath.row == 2) {
             MentionsTableViewController* mtvc = [[MentionsTableViewController alloc] init];
