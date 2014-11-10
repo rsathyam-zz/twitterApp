@@ -22,4 +22,6 @@
 - (IBAction)onReplyClicked:(id)sender;
 - (IBAction)onRetweetClicked:(id)sender;
 - (IBAction)onFavoriteClicked:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *imageButton;
+- (IBAction)onImageButtonClicked:(id)sender;
 @end

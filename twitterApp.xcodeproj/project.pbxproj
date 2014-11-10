@@ -14,8 +14,6 @@
 		FA0A18B319FF3F390040ABE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0A18B219FF3F390040ABE9 /* Images.xcassets */; };
 		FA0A18B619FF3F390040ABE9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0A18B419FF3F390040ABE9 /* LaunchScreen.xib */; };
 		FA0A18C219FF3F390040ABE9 /* twitterAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A18C119FF3F390040ABE9 /* twitterAppTests.m */; };
-		FA222B801A05830500037537 /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA222B7E1A05830500037537 /* HomeFeedViewController.m */; };
-		FA222B811A05830500037537 /* HomeFeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA222B7F1A05830500037537 /* HomeFeedViewController.xib */; };
 		FA222B8A1A059EC000037537 /* HomeFeedViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA222B881A059EC000037537 /* HomeFeedViewCell.m */; };
 		FA222B8B1A059EC000037537 /* HomeFeedViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA222B891A059EC000037537 /* HomeFeedViewCell.xib */; };
 		FA222B8D1A05DEAC00037537 /* retweet.png in Resources */ = {isa = PBXBuildFile; fileRef = FA222B8C1A05DEAC00037537 /* retweet.png */; };
@@ -68,9 +66,6 @@
 		FA0A18BB19FF3F390040ABE9 /* twitterAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = twitterAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0A18C019FF3F390040ABE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA0A18C119FF3F390040ABE9 /* twitterAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = twitterAppTests.m; sourceTree = "<group>"; };
-		FA222B7D1A05830500037537 /* HomeFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeFeedViewController.h; sourceTree = "<group>"; };
-		FA222B7E1A05830500037537 /* HomeFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeFeedViewController.m; sourceTree = "<group>"; };
-		FA222B7F1A05830500037537 /* HomeFeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeFeedViewController.xib; sourceTree = "<group>"; };
 		FA222B871A059EC000037537 /* HomeFeedViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeFeedViewCell.h; sourceTree = "<group>"; };
 		FA222B881A059EC000037537 /* HomeFeedViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeFeedViewCell.m; sourceTree = "<group>"; };
 		FA222B891A059EC000037537 /* HomeFeedViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeFeedViewCell.xib; sourceTree = "<group>"; };
@@ -189,9 +184,6 @@
 				FABC008C19FF444A00BDFE39 /* TwitterClient.h */,
 				FABC008D19FF444A00BDFE39 /* TwitterClient.m */,
 				FA5AA5F01A068340007467C8 /* favtwo.png */,
-				FA222B7D1A05830500037537 /* HomeFeedViewController.h */,
-				FA222B7E1A05830500037537 /* HomeFeedViewController.m */,
-				FA222B7F1A05830500037537 /* HomeFeedViewController.xib */,
 				FA222B871A059EC000037537 /* HomeFeedViewCell.h */,
 				FA222B881A059EC000037537 /* HomeFeedViewCell.m */,
 				FA222B891A059EC000037537 /* HomeFeedViewCell.xib */,
@@ -349,7 +341,6 @@
 				FABC008B19FF425400BDFE39 /* LoginViewController.xib in Resources */,
 				FA222B8D1A05DEAC00037537 /* retweet.png in Resources */,
 				FA8E256E1A0FFCA400F66ED5 /* ProfileViewController.xib in Resources */,
-				FA222B811A05830500037537 /* HomeFeedViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +404,6 @@
 				FA0A18AB19FF3F390040ABE9 /* twitterApp.xcdatamodeld in Sources */,
 				FA5AA5FB1A069BA6007467C8 /* ComposeViewController.m in Sources */,
 				FA0A18A519FF3F390040ABE9 /* main.m in Sources */,
-				FA222B801A05830500037537 /* HomeFeedViewController.m in Sources */,
 				FAA0077F1A0B0C510009B45C /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

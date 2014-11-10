@@ -9,7 +9,8 @@
 #import "ComposeViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "TwitterClient.h"
-#import "HomeFeedViewController.h"
+#import "HomeViewController.h"
+#import "UIButton+AFNetworking.h"
 
 @interface ComposeViewController ()
 
@@ -52,7 +53,7 @@
 
 - (void)textViewDidChange:(UITextView *)textView {
     NSInteger remainingLength = 140 - textView.text.length;
-    self.numCharsLabel.text = [NSString stringWithFormat:@"%ld", remainingLength];
+    self.numCharsLabel.text = [NSString stringWithFormat:@"%ld", (long)remainingLength];
 }
 
 - (void)onCancelButton {
@@ -72,7 +73,7 @@
             //Add this tweet to cache
             NSCache *cache = [[NSCache alloc]init];
             [cache setObject:tweet forKey:@"new_tweet"];
-            HomeFeedViewController* hfvc = [[HomeFeedViewController alloc] initWithUser:self.user];
+            HomeViewController* hfvc = [[HomeViewController alloc] initWithUser:self.user];
             [self.navigationController pushViewController:hfvc animated:YES];
         };
     }];

@@ -75,7 +75,7 @@
         } else {
             NSInteger retweetCount = [self.retweetsLabel.text integerValue];
             retweetCount += 1;
-            self.retweetsLabel.text = [NSString stringWithFormat:@"%ld", retweetCount];
+            self.retweetsLabel.text = [NSString stringWithFormat:@"%ld", (long)retweetCount];
             self.retweetButton.tintColor = [UIColor darkGrayColor];
             self.tweet.isRetweeted = YES;
             self.tweet.retweetID = tweet.tweetID;
@@ -118,7 +118,7 @@
             } else {
                 NSInteger favoritesCount = [self.favoritesLabel.text integerValue];
                 favoritesCount -= 1;
-                self.favoritesLabel.text = [NSString stringWithFormat:@"%ld", favoritesCount];
+                self.favoritesLabel.text = [NSString stringWithFormat:@"%ld", (long)favoritesCount];
                 self.favoriteButton.tintColor = [UIColor lightGrayColor];
                 self.tweet.isFavorited = NO;
             }

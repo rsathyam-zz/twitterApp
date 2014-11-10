@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import "HomeFeedViewController.h"
+#import "HomeViewController.h"
 #import "TwitterClient.h"
 #import "user.h"
 
@@ -21,7 +21,7 @@
     [[TwitterClient sharedInstance] loginWithCompletion:^(User *user, NSError *error) {
         if (user != nil) {
             [User setCurrentUser:user];
-            HomeFeedViewController* hfvc = [[HomeFeedViewController alloc] init];
+            HomeViewController* hfvc = [[HomeViewController alloc] init];
             UINavigationController *nvc = [[UINavigationController alloc]initWithRootViewController:hfvc];
             [self presentViewController:nvc animated:YES completion:nil];
             //Modally presents tweet view

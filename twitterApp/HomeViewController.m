@@ -216,20 +216,20 @@ static HomeFeedViewCell* _sizingCell = nil;
     
         NSURL* profilePictureURL = [NSURL URLWithString:[tweet.creator.profileImageURL stringByReplacingOccurrencesOfString:@"_normal." withString:@"."]];
         NSURLRequest* profilePictureRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5];
-        CGSize targetSize = cell.tweetProfilePictureLabel.bounds.size;
+        CGSize targetSize = cell.imageButton.bounds.size;
+        
+        if (tweet.creator.profilePic == nil) {
+            NSData *imageData = [NSData dataWithContentsOfURL:profilePictureURL];
+            UIImage* image = [[UIImage alloc] initWithData:imageData];
+            if (image) {
+                tweet.creator.profilePic = image;
+                [cell.imageButton setBackgroundImage:image forState:UIControlStateNormal];
+            }
+        } else {
+            [cell.imageButton setBackgroundImage:tweet.creator.profilePic forState:UIControlStateNormal];
+        }
     
-        [cell.tweetProfilePictureLabel setImageWithURLRequest:profilePictureRequest placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-            UIGraphicsBeginImageContextWithOptions(targetSize, NO, 0.0);
-            [image drawInRect:CGRectMake(0,0, targetSize.width, targetSize.height)];
-            UIImage* resized = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext();
-            [cell.tweetProfilePictureLabel setImage:resized];
-            tweet.profilePic = resized;
-            tweet.creator.profilePic = resized;
-        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-            //TODO UIAlertView
-            NSLog(@"%@", error);
-        }];
+
         return cell;
     } else {
         HamburgerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HamburgerTableViewCell"];
